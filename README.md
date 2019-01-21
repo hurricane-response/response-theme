@@ -1,4 +1,4 @@
-# Code For America Hurricane Response Hub
+# Code For America Disaster Response Hub
 
 ## Installation
 
@@ -6,13 +6,12 @@ This site is a static [Jekyll](https://jekyllrb.com/) site served on [GitHub Pag
 
 See the Jekyll docs for [local installation](https://jekyllrb.com/docs/installation/)
 
-# Hurricane Response Hub
+# Disaster Response Hub
 
-**Description**:  A quick response web hub for hurricane response and sharing maps and data from [Shelter API](https://github.com/hurricane-response/florence-api)
+**Description**:  A quick response web hub for disaster response and sharing maps and data from [Shelter & POD API](https://github.com/hurricane-response/florence-api)
 
 
-**Status**: The project is under development and live in production on https://michaelresponse.org
-
+**Status**: In development, preparing for 2019 hurricane season
 
 ![](https://raw.githubusercontent.com/hurricane-response/florence_website/master/screenshot.png)
 
@@ -43,3 +42,4 @@ Our [getting started](https://bit.ly/2N6YVYD) document serves as the best entry 
 
 ## Credits and references
 
+Built off of previous hurricane responses  [Florence](https://github.com/hurricane-response/florence_website),  & [Michael](https://github.com/hurricane-response/michael_website)
