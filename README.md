@@ -13,7 +13,7 @@ See the Jekyll docs for [local installation](https://jekyllrb.com/docs/installat
 
 **Status**: In development, preparing for 2019 hurricane season
 
-![](https://raw.githubusercontent.com/hurricane-response/florence_website/master/screenshot.png)
+![](https://raw.githubusercontent.com/hurricane-response/florence_website/master/screenshot.png "Default site screenshot.")
 
 ## Configuration
 
