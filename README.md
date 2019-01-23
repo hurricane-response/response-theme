@@ -17,11 +17,7 @@ See the Jekyll docs for [local installation](https://jekyllrb.com/docs/installat
 
 ## Configuration
 
-New pages created with the `default` layout type will automatically appear on the home page under the Get Help section.
-
-A separate collection for states also dynamically generated appears below.
-
-
+TODO:document configuation options
 
 ## Known issues
 
