@@ -1,1 +1,69 @@
-{{ content }}
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<!---TODO: PWA
+	<link rel="manifest" href="site.webmanifest">
+	-->
+	<link rel="stylesheet" href= "{{ site.url }}/assets/css/main.css">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.github.url | prepend: site.url }}">
+	{% seo %}
+	<meta name="theme-color" content="#fdfdfd">
+</head>
+	<body
+		{% if page.layout == "default" %}
+			class="{{page.bodyClass | default: site.bodyClass |default: "page" }}"
+			{% else %}
+			class="{{page.layout}}-content"
+		{% endif %}
+	>
+		<div class="wrapper">
+			<header class="mainheader">
+				<div class="site-branding">
+					<h1>{{ site.title }}</h1>
+            		<p class="subtitle">{{ site.description }}</p>
+				</div>	
+				<nav class="mainnav">
+					<ul>
+						{% for item in site.data.navbar.main-nav %}
+							{% if page.url == item.url %}
+							<li class="navbar-item" disabled="true"><a class="is-current" href="{{ item.url }}">{{ item.title }}</a></li>
+							{% else %}
+							<li class="navbar-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+            	</nav>
+			</header>
+			<main class="content">
+					{{ content }}
+			</main>
+
+			<footer class="colophon" role="contentinfo">
+				<h3>What is this?</h3>
+            <p>This site is built by <a href="https://codeforamerica.org">Code for America</a> brigades from across the
+                country.
+                To participate in data collection, curation, or any other help, please join us - <a
+                        href="{{ site.help_url }}">C4A
+                    Michael Volunteers</a>.
+            </p>
+            <div class="partners columns">
+                <p class="column">Thank you to the <a href="https://mapbox.com" target="_blank">Mapbox</a>
+                    team for
+                    collaborating on mapping tools.<br/>
+                    <img src="{{site.baseurl}}/assets/images/mapbox_logo.png">
+                </p>
+                <p class="column">Thank you to the <a href="https://cedrdigitalcorps.org/"
+                                                                        target="_blank">CEDR Digital Corps</a> for
+                    collaborating on data collection.<br/>
+                    <img src="{{site.baseurl}}/assets/images/CEDR_logo.jpg" width="163"/>
+                </p>
+
+			</footer>
+		</div>
+	</body>
+</html>
