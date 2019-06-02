@@ -1,0 +1,12 @@
+
+.colophon {
+    text-align: center;
+    background-color: var(--grey-light);
+    color: var(--dark);
+    min-height: 5em;
+    font-size: 1.3em;
+}
+
+.columns {
+    display: flex;
+}
