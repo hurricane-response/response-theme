@@ -13,30 +13,33 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
+title: CfA Hurricane Response
+email: email@hurricane-response.org
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  No One's Coming - It's Up to Us
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+
+# URL to the page to volunteer
+help_url: "https://www.codeforamerica.org"
+
+logo: "https://avatars0.githubusercontent.com/u/43193416?s=400&u=8e1d97c94fa7a9611c8b8fa765e68c8fe86e2e7c"
+
+# Site settings
+# txtbot number - what triggers the bot, word, zipcode, etc
+# TODO: confirm how the bot is configured and repeatable
+txtbot_trigger: Hurricane
+# txtbot display - i.e. 1-800-555-1212 vs 18005551212
+textbot_display: 898211
+
+
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# mapbox access token
+# TODO: use config file for map center
+mapbox_access_token: pk.eyJ1IjoibWlrbGItYzR0YiIsImEiOiJjam5kOGg3c2kwMDB3M3dwYXQyMDJpdzFtIn0.yKOyo193qF1quWsNwiFzug
