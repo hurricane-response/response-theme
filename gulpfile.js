@@ -63,7 +63,7 @@ function css() {
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest("./assets/css/"))
+    .pipe(gulp.dest("./_site/assets/css/"))
     .pipe(browsersync.stream());
 }
 
