@@ -17,3 +17,12 @@
 .text-bot p {
     padding: .3em;
 }
+
+.map-header {
+    text-align: center;
+}
+
+.page-content .content {
+    width: 95vw;
+    margin: 0 auto;
+}
