@@ -16,18 +16,15 @@
 
 .site-branding {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
 }
 
 .site-branding img {
     height: 3em;
     width: 3em;
+    margin-right: 1em;
 }
 
-.site-branding em {
-    display: block;
-    font-size: 1.3rem;
-}
 
 .mainnav {
     width: auto;
