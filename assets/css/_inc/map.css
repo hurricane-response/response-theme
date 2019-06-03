@@ -1,0 +1,88 @@
+
+
+#map-container {
+    overflow: hidden;
+  }
+  #map-container #map {
+      width: 95vw;
+      height: 75vh;
+      margin: 0 auto;
+  }
+.shelter-map_container {
+    height: 90vh;
+    position: relative;
+}
+#map-container.shelter-map_container #map {
+    min-height: 90vh;
+    max-height: 90vh;
+  }
+
+  .mapboxgl-ctrl-top-right div {
+    position: relative;
+    overflow: visible;
+  }
+
+  .mapboxgl-ctrl-top-right div::after {
+    content: 'Locate Yourself';
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 5px 0 5px;
+    height: 100%;
+    font-size: 2em;
+    width: auto;
+    white-space: nowrap;
+    background: rgba(10, 10, 10, 0.39);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1em 0 0 1em;
+    transform: translateX(-100%);
+  }
+
+  .map-legend {
+      padding: 1em 2em;
+      background-color: #f9f9f9;
+  }
+
+  .legend-items {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+  }
+
+  .map-legend p {
+    margin: 0 0 0 0 !important;
+  
+  }
+
+  .map-legend-route {
+    border: 3px solid #e93f36;
+    width: 2em;
+    height: 0px;
+}
+
+.map-legend-color {
+    height: 1em;
+    width: 1em;
+
+    border-radius: 50%;
+}
+
+.step-10 {
+    background-color: var(--cyan);
+}
+
+.step-20 {
+    background-color: var(--yellow);
+    height: 2em;
+    width: 2em;
+}
+
+.step-30 {
+    height: 3em;
+    width: 3em;
+    background-color: var(--orange);
+}

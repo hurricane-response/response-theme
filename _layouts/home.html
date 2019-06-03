@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<!---TODO: PWA
+	<link rel="manifest" href="site.webmanifest">
+	-->
+	<link rel="stylesheet" href= "{{ site.url }}/assets/css/main.css">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.github.url | prepend: site.url }}">
+	{% seo %}
+	<meta name="theme-color" content="#fdfdfd">
+	<!-- MapBoxGL -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+	<script>
+	(function() {
+
+		// Optimization for Repeat Views
+		if( sessionStorage.fontsLoadedCriticalFoftDataUriPolyfill ) {
+			document.documentElement.className += " fonts-stage-2";
+			return;
+		}
+
+		/* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */
+		(function(){'use strict';var f,g=[];function l(a){g.push(a);1==g.length&&f()}function m(){for(;g.length;)g[0](),g.shift()}f=function(){setTimeout(m)};function n(a){this.a=p;this.b=void 0;this.f=[];var b=this;try{a(function(a){q(b,a)},function(a){r(b,a)})}catch(c){r(b,c)}}var p=2;function t(a){return new n(function(b,c){c(a)})}function u(a){return new n(function(b){b(a)})}function q(a,b){if(a.a==p){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||q(a,b);c=!0},function(b){c||r(a,b);c=!0});return}}catch(e){c||r(a,e);return}a.a=0;a.b=b;v(a)}}
+		function r(a,b){if(a.a==p){if(b==a)throw new TypeError;a.a=1;a.b=b;v(a)}}function v(a){l(function(){if(a.a!=p)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0==a.a?"function"==typeof c?e(c.call(void 0,a.b)):e(a.b):1==a.a&&("function"==typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}n.prototype.g=function(a){return this.c(void 0,a)};n.prototype.c=function(a,b){var c=this;return new n(function(d,e){c.f.push([a,b,d,e]);v(c)})};
+		function w(a){return new n(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e==a.length&&b(h)}}var e=0,h=[];0==a.length&&b(h);for(var k=0;k<a.length;k+=1)u(a[k]).c(d(k),c)})}function x(a){return new n(function(b,c){for(var d=0;d<a.length;d+=1)u(a[d]).c(b,c)})};window.Promise||(window.Promise=n,window.Promise.resolve=u,window.Promise.reject=t,window.Promise.race=x,window.Promise.all=w,window.Promise.prototype.then=n.prototype.c,window.Promise.prototype["catch"]=n.prototype.g);}());
+
+		(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+		this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
+		function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}
+		function K(){if(null===E){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}E=""!==a.style.font}return E}function L(a,b){return[a.style,a.weight,K()?a.stretch:"","100px",b].join(" ")}
+		A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",q=0,D=b||3E3,H=(new Date).getTime();return new Promise(function(a,b){if(J()&&!G()){var M=new Promise(function(a,b){function e(){(new Date).getTime()-H>=D?b():document.fonts.load(L(c,'"'+c.family+'"'),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),N=new Promise(function(a,c){q=setTimeout(c,D)});Promise.race([N,M]).then(function(){clearTimeout(q);a(c)},function(){b(c)})}else m(function(){function u(){var b;if(b=-1!=
+		f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==v&&g==v&&h==v||f==w&&g==w&&h==w||f==x&&g==x&&h==x)),b=!b;b&&(d.parentNode&&d.parentNode.removeChild(d),clearTimeout(q),a(c))}function I(){if((new Date).getTime()-H>=D)d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,
+		g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new r(k),p=new r(k),f=-1,g=-1,h=-1,v=-1,w=-1,x=-1,d=document.createElement("div");d.dir="ltr";t(e,L(c,"sans-serif"));t(n,L(c,"serif"));t(p,L(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);v=e.a.offsetWidth;w=n.a.offsetWidth;x=p.a.offsetWidth;I();z(e,function(a){f=a;u()});t(e,L(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;u()});t(n,L(c,'"'+c.family+'",serif'));
+		z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
+
+
+		var fontASubset = new FontFaceObserver('PSWSubset');
+
+		// We use the default 3 second FontFaceObserver timeout here since the data uri is inlined
+		// unlike the 10 second timeout below.
+		Promise.all([fontASubset.load()]).then(function () {
+			document.documentElement.className += " fonts-stage-1";
+
+			var fontA = new FontFaceObserver('PublicSansWeb');
+			var fontB = new FontFaceObserver('PSWBold', {
+					weight: 700
+				});
+			var fontC = new FontFaceObserver('PSWItalic', {
+					style: 'italic'
+				});
+			var fontD = new FontFaceObserver('PSWBoldItalic', {
+					weight: 700,
+					style: 'italic'
+				});
+
+			Promise.all([
+				fontA.load(null, 10000),
+				fontB.load(null, 10000),
+				fontC.load(null, 10000),
+				fontD.load(null, 10000)
+			]).then(function () {
+				document.documentElement.className += " fonts-stage-2";
+
+				// Optimization for Repeat Views
+				sessionStorage.fontsLoadedCriticalFoftDataUriPolyfill = true;
+			});
+		});
+	})();
+	</script>
+</head>
+	<body
+		{% if page.layout == "home" %}
+			class="{{page.bodyClass | default: site.bodyClass |default: "home" }}"
+			{% else %}
+			class="{{page.layout}}-content"
+		{% endif %}
+	>
+		<div class="wrapper">
+			<header class="mainheader">
+				<div class="site-branding">
+					<a class="logo" href="{{site.url}}">
+            			<img src="{{site.baseurl}}/assets/images/og_img.jpg" alt="{{ site.title }}">
+        			</a>
+					<h1>{{ site.title }}</h1> - <em>{{ site.description }}</em>
+				</div>	
+				<nav class="mainnav" role="navigation">					
+						{% for item in site.data.navbar.main-nav %}
+							{% if page.url == item.url %}
+							<a class="is-current" href="{{ item.url }}">{{ item.title }}</a>
+							{% else %}
+							<a href="{{ item.url }}">{{ item.title }}</a>
+							{% endif %}
+						{% endfor %}
+            	</nav>
+			</header>
+			<main class="content">
+					<div id="map-container" class="shelter-map_container">
+    					<div id="map">
+    					</div>
+    
+					</div>
+					<div class="map-legend">
+    					<h3>Legend</h3>
+						<div class="legend-items">
+						<p>
+						<div class="map-legend-route"></div>
+						Evacuation Route
+						</p>
+						<p>
+						<div class="map-legend-color step-10"></div>
+						 10 Shelters or less
+						</p>
+						<p>
+						<div class="map-legend-color step-20"></div>
+						 10 -20  Shelters
+						</p>
+						<p>
+						<div class="map-legend-color step-30"></div>
+						 More than 20 Shelters
+						</p>
+						<p>
+						<div class="map-legend-icon">
+						<img src="{{site.baseurl}}/assets/images/shelter-icon.png" alt="Shelter Icon">
+						</div>
+						 Shelter
+						</p>
+						</div>	
+					</div>
+<script>
+    // Load access token from config
+    mapboxgl.accessToken = '{{site.mapbox_access_token}}';
+
+    //TODO: move this to config.
+    const MAP_LOAD_CENTER = [-84.84329, 37.7623];
+
+    var map = new mapboxgl.Map({
+        // container id specified in the HTML
+        container: 'map',
+        // style URL
+        style: 'mapbox://styles/miklb-c4tb/cjnozdzs41qlx2rqvf7mwfztt',
+        // initial position in [lon, lat] format
+        center: MAP_LOAD_CENTER,
+        // initial zoom
+        zoom: 7.3
+    });
+map.on('load', function() {
+    // Add a new source from our GeoJSON data and set the
+    // 'cluster' option to true. GL-JS will add the point_count property to your source data.
+    map.addSource("shelters", {
+        type: "geojson",
+        data: "https://hurricane-florence-api.herokuapp.com/api/v1/shelters/geo.json",
+        cluster: true,
+        clusterMaxZoom: 11, // Max zoom to cluster points on
+        clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+    });
+
+    map.addLayer({
+        id: "clusters",
+        type: "circle",
+        source: "shelters",
+        filter: ["has", "point_count"],
+        paint: {
+            // Use step expressions (https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+            // with three steps to implement three types of circles:
+            //   * Blue, 20px circles when point count is less than 10
+            //   * Yellow, 30px circles when point count is between 10 and 20
+            //   * Pink, 40px circles when point count is greater than or equal to 20
+            "circle-color": [
+                "step",
+                ["get", "point_count"],
+                "#4298bb",
+                10,
+                "#fedd44",
+                20,
+                "#e87d2b"
+            ],
+            "circle-radius": [
+                "step",
+                ["get", "point_count"],
+                20,
+                10,
+                30,
+                20,
+                40
+            ]
+        }
+    });
+    map.addLayer({
+        id: "cluster-count",
+        type: "symbol",
+        source: "shelters",
+        filter: ["has", "point_count"],
+        layout: {
+            "text-field": "{point_count_abbreviated}",
+            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+            "text-size": 12
+        }
+    });
+    map.loadImage("{{site.baseurl}}/assets/images/shelter-icon.png", (error, img) => {
+        map.addImage("shelter", img);
+        map.addLayer({
+            id: "unclustered-point",
+            type: "symbol",
+            source: "shelters",
+            filter: ["!", ["has", "point_count"]],
+            layout: {
+                "icon-image": "shelter"
+            }
+        });
+        map.on('click', 'unclustered-point', (ev) => {
+            const coords = ev.features[0].geometry.coordinates.slice();
+            const props = ev.features[0].properties;
+            const popup = new mapboxgl.Popup({
+                offset: 25,
+                className: 'shelter-popup'
+            }).setHTML(popupTemplate(props));
+            popup.setLngLat(coords).addTo(map);
+        });
+        // Change the cursor to a pointer when the mouse is over the unclustered-point layer.
+        map.on('mouseenter', 'unclustered-point', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'unclustered-point', function () {
+            map.getCanvas().style.cursor = '';
+        });
+
+    });
+    var navControl = new mapboxgl.NavigationControl();
+    map.addControl(navControl, 'bottom-right');
+    map.addControl(new mapboxgl.GeolocateControl({
+        className: 'control-geolocate',
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
+});
+
+    /**
+     * https://github.com/hurricane-response/florence-api/issues/53
+     *
+     * Checks if address has "," to signify that it contains more than just the street number.
+     *
+     * @param shelter
+     * @returns {boolean}
+     */
+    function isFullAddress(shelter) {
+        if (!shelter.address){
+            return false;
+        }
+        return shelter.address.split(',').length > 1;
+    }
+
+    /**
+     * Verifies there is a phone number received that is not "0000000000"
+     *
+     * @param shelter
+     * @returns {boolean}
+     */
+    function isPhone(shelter) {
+        let phone = shelter.cleanPhone.trim();
+        if (((/[^\d]/.test(phone)) || (phone.replace(/0+/g, '').length === 0)) && shelter.phone) {
+            phone = shelter.phone.replace(/[^\d]/g, '');
+        }
+        return phone.replace(/[\-\+\(\)\s0]+/g, '').length !== 0;
+    }
+
+    /**
+     * https://github.com/hurricane-response/florence-api/issues/53
+     *
+     * Joins the different address segments into a string,
+     * if state has no value it will just join the zipcode after the city
+     *
+     * @param shelter
+     * @returns {string}
+     */
+    function shelterAddressToString(shelter) {
+        return [
+            shelter.address,
+            shelter.city,
+            shelter.state
+            + ' '
+            + shelter.zip
+        ].join(', ');
+    }
+
+    /**
+     * Replaces URLs in a string with anchor elements
+     *
+     * @param content {string}
+     * @returns {string}
+     */
+    function urlsToAnchors(content) {
+        if (!content) {
+            return void 0;
+        }
+        const urlMatchPattern = /(?:(?:https?):\/\/|www\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm;
+        const urls = content.match(urlMatchPattern);
+        if (!urls){
+            return content;
+        }
+        urls.forEach(url => {
+            content = content.replace(url, transformToAnchor(url));
+        });
+        return content;
+    }
+
+    /**
+     * Replaces url with an html anchor
+     *
+     * @param url
+     * @returns {string}
+     */
+    function transformToAnchor(url) {
+        return `<a role="link" href="${url}" target="_blank">${url}</a>`
+    }
+
+    /**
+     * Builds a HTML template (Popup) from a shelter object.
+     *
+     * @params shelter
+     * @returns {string}
+     */
+    function popupTemplate(shelter) {
+        const phoneLink = `
+            <div class="phone">
+                <svg id="icon-phone" height="32px" viewBox="0 0 32 32" aria-label="phone icon">
+                    <path d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z"></path>
+                </svg>
+                <div class="phone-details" aria-label="shelter phone number">
+                    <a class="phone" role="link" href="tel:${shelter.cleanPhone}">${shelter.phone}</a>
+                </div>
+            </div>
+        `;
+        const address = `
+            <div class="address">
+                <svg id="icon-address" height="32px" viewBox="0 0 32 32" aria-label="address icon">
+                    <path d="M0 32h16v-32h-16v32zM10 4h4v4h-4v-4zM10 12h4v4h-4v-4zM10 20h4v4h-4v-4zM2 4h4v4h-4v-4zM2 12h4v4h-4v-4zM2 20h4v4h-4v-4zM18 10h14v2h-14zM18 32h4v-8h6v8h4v-18h-14z"></path>
+                </svg>
+                <div class="address-details" aria-label="address details">
+                    ${isFullAddress(shelter) ? shelter.address : shelterAddressToString(shelter)}
+                </div>
+            </div>
+        `;
+        const note = `
+            <div class="note">
+                <label><strong>Note:</strong></label>
+                <div class="note-details" aria-label="Notes for shelter">
+                    ${urlsToAnchors(shelter.notes)}
+                </div>
+            </div>
+        `;
+        const petsNote = `
+            <div class="note">
+                <label><strong>Pets:</strong></label>
+                <div class="note-details" aria-label="Notes for shelter pets policy">
+                    ${urlsToAnchors(shelter.pets_notes)}
+                </div>
+            </div>
+        `;
+        return `
+            <header class="popup-header">
+                <p class="is-size-4 has-text-centered">${shelter.shelter}</p>
+            </header>
+            <div class="shelter-details">
+                <div class="content is-size-6 has-text-left">
+                    ${!!shelter.address ? address : ``}
+                    ${isPhone(shelter) ? phoneLink : ``}
+                    <div class="controls">
+                        ${!!shelter.address
+            ? `
+                            <a class="directions button is-link" target="_blank" href="https://www.google.com/maps/dir/current+location/${encodeURIComponent(shelterAddressToString(shelter))}" aria-label="Get directions button">
+                                <svg id="icon-directions" height="100%" viewBox="0 0 32 32" aria-label="directions icon">
+                                    <path d="M17 32c-0.072 0-0.144-0.008-0.217-0.024-0.458-0.102-0.783-0.507-0.783-0.976v-15h-15c-0.469 0-0.875-0.326-0.976-0.783s0.129-0.925 0.553-1.123l30-14c0.381-0.178 0.833-0.098 1.13 0.199s0.377 0.749 0.199 1.13l-14 30c-0.167 0.358-0.524 0.577-0.906 0.577zM5.508 14h11.492c0.552 0 1 0.448 1 1v11.492l10.931-23.423-23.423 10.931z"></path>
+                                </svg>
+                                <div class="separator"></div>
+                                <label>Directions</label>
+                            </a>
+                        `
+            : ``}
+                    </div>
+                    ${!!shelter.notes ? note : ``}
+                    ${!!shelter.pets_notes ? petsNote : ``}
+                </div>
+            </div>
+        `;
+    }
+
+</script>
+
+			</main>
+
+			<footer class="colophon" role="contentinfo">
+				<h3>What is this?</h3>
+            <p>This site is built by <a href="https://codeforamerica.org">Code for America</a> brigades from across the
+                country.
+                To participate in data collection, curation, or any other help, please join us - <a
+                        href="{{ site.help_url }}">C4A
+                    Michael Volunteers</a>.
+            </p>
+            <div class="partners columns">
+                <p class="column">Thank you to the <a href="https://mapbox.com" target="_blank">Mapbox</a>
+                    team for
+                    collaborating on mapping tools.<br/>
+                    <img src="{{site.baseurl}}/assets/images/mapbox_logo.png">
+                </p>
+                <p class="column">Thank you to the <a href="https://cedrdigitalcorps.org/"
+                                                                        target="_blank">CEDR Digital Corps</a> for
+                    collaborating on data collection.<br/>
+                    <img src="{{site.baseurl}}/assets/images/CEDR_logo.jpg" width="163"/>
+                </p>
+
+			</footer>
+		</div>
+	</body>
+</html>
