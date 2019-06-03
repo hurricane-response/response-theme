@@ -5,4 +5,15 @@
 @import "links.css";
 @import "header.css";
 @import "map.css";
-@import "footer.css"
+@import "footer.css";
+
+.text-bot {
+    background-color: var(--green);
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.text-bot p {
+    padding: .3em;
+}

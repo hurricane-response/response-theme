@@ -40,3 +40,7 @@ a:hover {
   a:active {
     color: var(--highlight);
   }
+
+.text-bot a:link {
+    color: var(--grey-light);
+}
