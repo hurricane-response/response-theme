@@ -1,5 +1,6 @@
 @import "variables";
 @import "remedy";
+@import "typography.css";
 @import "grid.css";
 @import "links.css";
 @import "header.css";
