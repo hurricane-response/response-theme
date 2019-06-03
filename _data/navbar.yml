@@ -1,0 +1,7 @@
+main-nav:
+  - title: Distribution Points
+    url: /distribution-map
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact

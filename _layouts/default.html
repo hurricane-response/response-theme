@@ -81,19 +81,19 @@
 		<div class="wrapper">
 			<header class="mainheader">
 				<div class="site-branding">
-					<h1>{{ site.title }}</h1>
-            		<p class="subtitle">{{ site.description }}</p>
+					<a class="logo" href="{{site.url}}">
+            			<img src="{{site.baseurl}}/assets/images/og_img.jpg" alt="{{ site.title }}">
+        			</a>
+					<h1>{{ site.title }}</h1> - <em>{{ site.description }}</em>
 				</div>	
-				<nav class="mainnav">
-					<ul>
+				<nav class="mainnav" role="navigation">					
 						{% for item in site.data.navbar.main-nav %}
 							{% if page.url == item.url %}
-							<li class="navbar-item" disabled="true"><a class="is-current" href="{{ item.url }}">{{ item.title }}</a></li>
+							<a class="is-current" href="{{ item.url }}">{{ item.title }}</a>
 							{% else %}
-							<li class="navbar-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+							<a href="{{ item.url }}">{{ item.title }}</a>
 							{% endif %}
 						{% endfor %}
-					</ul>
             	</nav>
 			</header>
 			<main class="content">

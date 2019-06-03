@@ -9,6 +9,10 @@ a:link {
     color: var(--red);
 }
 
+.mainnav a:link {
+    color: white;
+}
+
 a:visited { 
     color: var(--dark);
 }
@@ -18,9 +22,19 @@ a:focus {
     background: var(--yellow);
 }
 
+.mainnav a:focus {
+    border-bottom: 1px solid white;
+}
+
 a:hover {
     border-bottom: 1px solid;
     background: var(--yellow);
+  }
+
+.mainnav a:hover {
+    border-bottom: 1px solid var(--red);
+    color: var(--red);
+    background: white;
   }
   
   a:active {
