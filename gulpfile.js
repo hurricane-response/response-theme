@@ -64,6 +64,7 @@ function css() {
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest("./_site/assets/css/"))
+    .pipe(gulp.dest("./assets/css/"))
     .pipe(browsersync.stream());
 }
 
