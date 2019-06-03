@@ -43,6 +43,7 @@ a:hover {
 
 .text-bot a:link {
     color: var(--grey-light);
+    font-size: 1.3em;
 }
 
 .text-bot a:hover {
