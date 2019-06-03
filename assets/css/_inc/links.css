@@ -44,3 +44,8 @@ a:hover {
 .text-bot a:link {
     color: var(--grey-light);
 }
+
+.text-bot a:hover {
+    background-color: white;
+    color: var(--green);
+}
