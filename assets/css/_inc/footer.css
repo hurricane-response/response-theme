@@ -20,16 +20,25 @@
 
 .columns {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     margin: 0 2em;
 }
 
-.column {
-    width: 42%;
-    padding: 0 1em;
-}
+
 
 .column img {
     margin: auto;
+}
+
+@media (min-width: 900px) {
+    .columns {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .column {
+        width: 42%;
+        padding: 0 1em;
+    }
 }

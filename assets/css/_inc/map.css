@@ -48,15 +48,11 @@
 
   .legend-items {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-around;
   }
 
-  .map-legend p {
-    margin: 0 0 0 0 !important;
-  
-  }
+
 
   .map-legend-route {
     border: 3px solid #e93f36;
@@ -67,7 +63,6 @@
 .map-legend-color {
     height: 1em;
     width: 1em;
-
     border-radius: 50%;
 }
 
@@ -85,4 +80,15 @@
     height: 3em;
     width: 3em;
     background-color: var(--orange);
+}
+
+@media (min-width: 600px) {
+  .legend-items {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .legend-items p {
+    padding-top: .3em;
+  }
 }
