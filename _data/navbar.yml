@@ -1,4 +1,6 @@
 main-nav:
+  - title: Shelters
+    url: /
   - title: Distribution Points
     url: /distribution-map
   - title: About
