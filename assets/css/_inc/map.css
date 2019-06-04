@@ -93,3 +93,13 @@
     padding-top: .3em;
   }
 }
+
+.geocoder {
+  position:absolute;
+  z-index:1;
+  width:80%;
+  left:30%;
+  margin-left:-25%;
+  top:20px;
+  }
+  .mapboxgl-ctrl-geocoder { min-width:100%; }

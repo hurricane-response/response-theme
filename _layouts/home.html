@@ -25,6 +25,7 @@
 					<div id="map-container" class="shelter-map_container">
     					<div id="map">
     					</div>
+                        <div id='geocoder' class='geocoder'></div>
     
 					</div>
 					<div class="map-legend">
@@ -54,6 +55,9 @@
 						</p>
 						</div>	
 					</div>
+                    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.css' type='text/css' />
+<script src='//d3js.org/d3.v3.min.js' charset='utf-8'></script>
 <script>
     // Load access token from config
     mapboxgl.accessToken = '{{site.mapbox_access_token}}';
@@ -71,6 +75,8 @@
         // initial zoom
         zoom: 7.3
     });
+
+
 map.on('load', function() {
     // Add a new source from our GeoJSON data and set the
     // 'cluster' option to true. GL-JS will add the point_count property to your source data.
@@ -165,6 +171,14 @@ map.on('load', function() {
         trackUserLocation: true
     }));
 });
+
+var geocoder = new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+placeholder: "Search for closest shelter.",
+mapboxgl: mapboxgl
+});
+
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
     /**
      * https://github.com/hurricane-response/florence-api/issues/53
