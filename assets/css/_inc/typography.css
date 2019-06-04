@@ -63,7 +63,8 @@ body {
     font-style: italic;
 }
 
-.fonts-stage-2 .map-header {
+
+.fonts-stage-2 .map-header, .fonts-stage-2 a:visited {
     font-family: PWSBold, sans-serif;
     font-weight: 700;
 }
