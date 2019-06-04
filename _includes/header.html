@@ -8,9 +8,9 @@
 				<nav class="mainnav" role="navigation">					
 						{% for item in site.data.navbar.main-nav %}
 							{% if page.url == item.url %}
-							<a class="is-current" href="{{ base.url }}{{ item.url }}">{{ item.title }}</a>
+							<a class="is-current" href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
 							{% else %}
-							<a href="{{ base.url }}{{ item.url }}">{{ item.title }}</a>
+							<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
 							{% endif %}
 						{% endfor %}
             	</nav>
