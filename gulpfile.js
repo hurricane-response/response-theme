@@ -77,7 +77,7 @@ function jekyll() {
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./assets/css/**/*", css);
+  gulp.watch("./assets/css/_inc/*", css);
   gulp.series(css, browserSyncReload)
   gulp.watch(
     [
