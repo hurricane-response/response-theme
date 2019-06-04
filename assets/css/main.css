@@ -8,6 +8,7 @@
     --green: #00a175;
     --turqoise: #399fd3;
     --cyan: #4298bb;
+    --cfablue: #399fd3;
     --blue: #004b6a;
     --purple: #69579C;
     --red: #cf1b41;
@@ -138,7 +139,7 @@ body {
     font-family: PSWItalic, sans-serif;
     font-style: italic;
 }
-.fonts-stage-2 .map-header {
+.fonts-stage-2 .map-header, .fonts-stage-2 a:visited {
     font-family: PWSBold, sans-serif;
     font-weight: 700;
 }
@@ -208,29 +209,25 @@ a {
     text-decoration: none;
 }
 a:link {
-    color: #cf1b41;
-    color: var(--red);
+    color: #004b6a;
+    color: var(--blue);
 }
 .mainnav a:link {
     color: white;
 }
 a:visited { 
-    color: #232323; 
-    color: var(--dark);
+    color: #444444; 
+    color: var(--grey-dark);
 }
 a:focus {
-    border-bottom: 1px solid #cf1b41;
-    border-bottom: 1px solid var(--red);
-    background: #fedd44;
-    background: var(--yellow);
+    border-bottom: 1px solid #004b6a;
+    border-bottom: 1px solid var(--blue);
 }
 .mainnav a:focus {
     border-bottom: 1px solid white;
 }
 a:hover {
     border-bottom: 1px solid;
-    background: #fedd44;
-    background: var(--yellow);
   }
 .mainnav a:hover {
     border-bottom: 1px solid #cf1b41;
@@ -324,7 +321,8 @@ a:active {
     justify-content: flex-start;
             transform: translateX(-100%);
     border-radius: 1em 0 0 1em;
-    background: rgba(10, 10, 10, 0.39);
+    background-color: #399fd3;
+    background-color: var(--turqoise);
     padding: 0 5px 0 5px;
     width: auto;
     height: 100%;
@@ -417,8 +415,8 @@ a:active {
     }
 }
 .text-bot {
-    background-color: #00a175;
-    background-color: var(--green);
+    background-color: #004b6a;
+    background-color: var(--blue);
     color: white;
     font-size: 1.3rem;
     text-align: center;
