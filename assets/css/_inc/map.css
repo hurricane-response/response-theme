@@ -17,6 +17,7 @@
     max-height: 90vh;
   }
 
+
   .mapboxgl-ctrl-top-right div {
     position: relative;
     overflow: visible;
@@ -32,7 +33,7 @@
     font-size: 2em;
     width: auto;
     white-space: nowrap;
-    background: rgba(10, 10, 10, 0.39);
+    background-color: var(--turqoise);
     color: white;
     position: absolute;
     top: 0;
