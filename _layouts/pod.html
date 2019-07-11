@@ -59,7 +59,7 @@
     mapboxgl.accessToken = '{{site.mapbox_access_token}}';
 
     //TODO: move this to config.
-    const MAP_LOAD_CENTER = [-88.9159, 35.8198];
+    const MAP_LOAD_CENTER = [{{ site.map_center }}];
 
     var map = new mapboxgl.Map({
         // container id specified in the HTML
@@ -76,7 +76,7 @@ map.on('load', function() {
     // 'cluster' option to true. GL-JS will add the point_count property to your source data.
     map.addSource("pods", {
         type: "geojson",
-        data: "https://hurricane-florence-api.herokuapp.com/api/v1/distribution_points/geo.json",
+        data: "{{ site.pod_endpoint }}",
         cluster: true,
         clusterMaxZoom: 11, // Max zoom to cluster points on
         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)

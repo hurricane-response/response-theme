@@ -43,3 +43,9 @@ plugins:
 # mapbox access token
 # TODO: use config file for map center
 mapbox_access_token: pk.eyJ1IjoibWlrbGItYzR0YiIsImEiOiJjam5kOGg3c2kwMDB3M3dwYXQyMDJpdzFtIn0.yKOyo193qF1quWsNwiFzug
+
+map_center: -88.9159, 35.8198
+
+shelter_endpoint: https://hurricane-florence-api.herokuapp.com/api/v1/shelters/geo.json
+
+pod_endpoint: https://hurricane-florence-api.herokuapp.com/api/v1/distribution_points/geo.json
