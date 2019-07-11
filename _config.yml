@@ -32,7 +32,7 @@ txtbot_trigger: Hurricane
 # txtbot display - i.e. 1-800-555-1212 vs 18005551212
 textbot_display: 898211
 
-
+gtag: UA-125718262-3
 
 # Build settings
 markdown: kramdown
