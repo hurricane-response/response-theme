@@ -312,14 +312,13 @@ a:active {
     overflow: visible;
   }
 .mapboxgl-ctrl-top-right div::after {
-    -webkit-transform: translateX(-100%);
     display: flex;
     position: absolute;
     top: 0;
     left: 0;
     align-items: center;
     justify-content: flex-start;
-            transform: translateX(-100%);
+    transform: translateX(-100%);
     border-radius: 1em 0 0 1em;
     background-color: #399fd3;
     background-color: var(--turqoise);
