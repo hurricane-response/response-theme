@@ -14,12 +14,14 @@
 			{% include header.html %}
 			
 			<main class="content">
+            {% if site.txtbot %}
 			<div class="text-bot">
 			<p>Text your zipcode to&#160;<a class="has-text-light" href="sms:8035004835"> 1-803-500-4835 </a>&#160; for
             local shelter information.</p>
 			</div>
+            {% endif %}
 			<div class="map-header">
-			<h2>🚨🚨 DRILL: Shaken Fury 2019 Response 🚨🚨</h2>
+			<h2>{{ site.title }}</h2>
 			<h3>Shelter Locations</h3>
 			</div>
 					<div id="map-container" class="shelter-map_container">
@@ -63,7 +65,7 @@
     mapboxgl.accessToken = '{{site.mapbox_access_token}}';
 
     //TODO: move this to config.
-    const MAP_LOAD_CENTER = [-84.84329, 37.7623];
+    const MAP_LOAD_CENTER = [{{ site.shelter_map_center }}];
 
     var map = new mapboxgl.Map({
         // container id specified in the HTML
@@ -82,7 +84,7 @@ map.on('load', function() {
     // 'cluster' option to true. GL-JS will add the point_count property to your source data.
     map.addSource("shelters", {
         type: "geojson",
-        data: "https://hurricane-florence-api.herokuapp.com/api/v1/shelters/geo.json",
+        data: "{{ site.shelter_endpoint }}",
         cluster: true,
         clusterMaxZoom: 11, // Max zoom to cluster points on
         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
