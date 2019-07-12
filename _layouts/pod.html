@@ -14,12 +14,13 @@
 			{% include header.html %}
 			
 			<main class="content">
+            {% if site.txtbot %}
 			<div class="text-bot">
 			<p>Text your zipcode to&#160;<a class="has-text-light" href="sms:8035004835"> 1-803-500-4835 </a>&#160; for
             local shelter information.</p>
 			</div>
 			<div class="map-header">
-			<h2>🚨🚨 DRILL: Shaken Fury 2019 Response 🚨🚨</h2>
+			<h2>{{ site.title }}/h2>
 			<h3>Points of Distribution and Food Locations</h3>
 			</div>
 					<div id="map-container" class="shelter-map_container">
