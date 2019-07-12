@@ -394,10 +394,13 @@ a:active {
     padding: .5em;
     color: #e5e5e5;
     color: var(--grey-light);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 .shelter-popup .shelter-details {
     padding: 2em 1em 1em 1em;
+  }
+.mapboxgl-popup-content svg {
+    height: 1em;
   }
 .colophon {
     background-color: #e5e5e5;
