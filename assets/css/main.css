@@ -383,7 +383,22 @@ a:active {
   margin-left:-25%;
   width:80%;
   }
-.mapboxgl-ctrl-geocoder { min-width:100%; }
+.mapboxgl-ctrl-geocoder { min-width:100%; 
+  }
+.shelter-popup > .mapboxgl-popup-content {
+    padding: 0;
+  }
+.shelter-popup .popup-header {
+    background: #399fd3;
+    background: var(--cfablue);
+    padding: .5em;
+    color: #e5e5e5;
+    color: var(--grey-light);
+    font-size: 1.5rem;
+  }
+.shelter-popup .shelter-details {
+    padding: 2em 1em 1em 1em;
+  }
 .colophon {
     background-color: #e5e5e5;
     background-color: var(--grey-light);
