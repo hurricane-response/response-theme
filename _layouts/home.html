@@ -14,12 +14,7 @@
 			{% include header.html %}
 			
 			<main class="content">
-            {% if site.txtbot %}
-			<div class="text-bot">
-			<p>Text your zipcode to&#160;<a class="has-text-light" href="sms:8035004835"> 1-803-500-4835 </a>&#160; for
-            local shelter information.</p>
-			</div>
-            {% endif %}
+            {% include txtbot.html %}
 			<div class="map-header">
 			<h2>{{ site.title }}</h2>
 			<h3>Shelter Locations</h3>
