@@ -385,6 +385,7 @@ a:active {
   }
 .mapboxgl-ctrl-geocoder { min-width:100%; 
   }
+
 .shelter-popup > .mapboxgl-popup-content {
     padding: 0;
   }
@@ -399,9 +400,13 @@ a:active {
 .shelter-popup .shelter-details {
     padding: 2em 1em 1em 1em;
   }
+.shelter-details .content svg {
+  height: 1.7em;
+}
 .mapboxgl-popup-content svg {
     height: 1em;
   }
+
 .colophon {
     background-color: #e5e5e5;
     background-color: var(--grey-light);
