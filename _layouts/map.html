@@ -1,0 +1,13 @@
+---
+layout: default
+has_map: true
+---  
+
+{% include txtbot.html %}
+<div class="map-header">
+    <h3>{{ site.data.maps[page.map_name].map_title }}</h3>
+</div>
+
+{% include map.html  %}
+
+{{ content }}

@@ -28,9 +28,43 @@
 */
 
 .colophon {
-    grid-area: footer;
+    background-color: #e5e5e5;
+    background-color: var(--grey-light);
+    padding-top: 1em;
+    min-height: 5em;
+    color: #232323;
+    color: var(--dark);
+    font-size: 1.3em;
+    text-align: center;
 }
+.colophon h3 {
+    font-size: 2rem;
+}
+.colophon p:first-of-type {
+    margin: 0 3em 1em;
+    padding-top: 1em;
+    
+}
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2em;
+}
+.column img {
+    margin: auto;
+}
+@media (min-width: 900px) {
+    .columns {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    .column {
+        padding: 0 1em;
+        width: 42%;
+    }
+}
 /*
     Grid
 */
@@ -56,8 +90,4 @@
         "sidebar content"
         "footer footer"
 	}
-
-	
-
-
 }

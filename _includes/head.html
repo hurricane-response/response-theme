@@ -16,14 +16,11 @@
 	<link rel="manifest" href="site.webmanifest">
 	-->
 	<link rel="stylesheet" href= "{{ site.baseurl }}/assets/css/main.css">
-	{% if include.isMap==true %}
-		<link rel="stylesheet" href= "{{ site.baseurl }}/assets/css/map.css">
-	{% endif %}
 	{% seo %}
 	<meta name="theme-color" content="#fdfdfd">
 	<!-- MapBoxGL -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
 	
 	<script>
 	(function() {

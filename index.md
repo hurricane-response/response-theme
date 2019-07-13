@@ -1,3 +1,4 @@
 ---
-layout: home
+layout: map
+map_name: shelters
 ---

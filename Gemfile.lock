@@ -249,6 +249,7 @@ DEPENDENCIES
   jekyll-include-cache
   jekyll-remote-theme
   jekyll-seo-tag (~> 2.1)
+  minima
   tzinfo-data
 
 BUNDLED WITH

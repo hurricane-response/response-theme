@@ -1,5 +1,5 @@
 {% assign site_map_opts = site.data.maps.shared.options %}
-{% assign page_map_opts = site.data.maps[include.map_name] %}
+{% assign page_map_opts = site.data.maps[page.map_name] %}
 
 // Load access token from config
 mapboxgl.accessToken = '{{ site.data.maps.shared.mapbox_access_token }}';
@@ -109,23 +109,36 @@ map.on('load', function() {
 
     var navControl = new mapboxgl.NavigationControl();
     map.addControl(navControl, 'bottom-right');
-    map.addControl(new mapboxgl.GeolocateControl({
-        className: 'control-geolocate',
-        positionOptions: {
-            enableHighAccuracy: true
-        },
+
+    var geoLocateCtl = new CustomGeoLocateControl1({
+        className:         'control-geolocate',
+        positionOptions:   { enableHighAccuracy: true },
         trackUserLocation: true
-    }));
+    });
+    map.addControl(geoLocateCtl);
 });
 
 var geocoder = new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-placeholder: "Search for closest shelter.",
-mapboxgl: mapboxgl
+    accessToken: mapboxgl.accessToken,
+    placeholder: "Search by address.",
+    mapboxgl: mapboxgl
 });
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
+
+class CustomGeoLocateControl1 extends mapboxgl.GeolocateControl {
+    constructor (options) { super(options); }
+    onAdd (map) {
+        super.onAdd(map);
+        console.log('_geolocateButton'+this._geolocateButton);
+        var textLabel = document.createElement('div');
+            textLabel.className = 'mapboxgl-ctrl-geolocate-label';
+            textLabel.textContent = 'Where am I';
+        this._container.appendChild(textLabel);
+        return this._container;
+    }
+}
 
 /***************************************************************************
  * METHODS

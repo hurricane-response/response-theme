@@ -17,5 +17,5 @@ legend:
     classes: map-legend-color step-30
   -
     label:   Shelter
-    icon:    <img src="{{site.baseurl}}/assets/images/shelter-icon.png" alt="Shelter Icon">
+    icon:    <img src="/assets/images/shelter-icon.png" alt="Shelter Icon">
     classes: map-legend-icon

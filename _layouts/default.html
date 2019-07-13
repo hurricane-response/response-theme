@@ -4,16 +4,19 @@
 {% include head.html %}
 
 	<body
-		{% if page.layout == "default" %}
-			class="{{page.bodyClass | default: site.bodyClass |default: "page" }}"
-			{% else %}
+		{% if page.layout == "home" %}
+			class="{{page.bodyClass | default: site.bodyClass |default: "home" }}"
+		{% else %}
 			class="{{page.layout}}-content"
 		{% endif %}
 	>
 		<div class="wrapper">
 			{% include header.html %}
+			
 			<main class="content">
-					{{ content }}
+
+				{{ content }}
+
 			</main>
 
 			{% include footer.html %}

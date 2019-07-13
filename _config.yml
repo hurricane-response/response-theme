@@ -40,6 +40,11 @@ help_url: "https://www.codeforamerica.org"
 
 ########### COMMON SETTINGS ###########
 
+defaults:
+  -
+    values:
+      layout: default
+
 permalink: pretty
 
 # Base hostname & protocol for your site, e.g. http://example.com (not currently used)
@@ -52,7 +57,7 @@ gtag: UA-125718262-3
 
 # Build settings
 markdown: kramdown
-#theme: minima
+theme: minima
 plugins:
   - jekyll-seo-tag
   - jekyll-remote-theme
