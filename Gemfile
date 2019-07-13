@@ -10,6 +10,8 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem 'github-pages', '>= 192', group: :jekyll_plugins
+gem "jekyll-remote-theme"
+gem "jekyll-include-cache"
 
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
