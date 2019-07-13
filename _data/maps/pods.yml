@@ -1,0 +1,21 @@
+source_name: pods
+map_title: Points of Distribution and Food Locations
+map_center: -88.9159, 35.8198
+data_endpoint: https://hurricane-florence-api.herokuapp.com/api/v1/distribution_points/geo.json
+legend:
+  - 
+    label:   Evacuation Route
+    classes: map-legend-route
+  -
+    label:   10 Distribution Points or less
+    classes: map-legend-color step-10
+  -
+    label:   10-20 Distribution Points
+    classes: map-legend-color step-20
+  -
+    label:   More than 20 Distribution Points
+    classes: map-legend-color step-30
+  -
+    label:   Distribution Point
+    icon:    <img src="{{site.baseurl}}/assets/images/shelter-icon.png" alt="Shelter Icon">
+    classes: map-legend-icon

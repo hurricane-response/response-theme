@@ -1,0 +1,27 @@
+<div id="map-container" class="shelter-map_container">
+    <div id="map"></div>
+    <div id='geocoder' class='geocoder'></div>
+</div>
+
+<div class="map-legend">
+    <h3>Legend</h3>
+    <div class="legend-items">
+        {% for legend in site.data.maps[include.map_name].legend %}
+            <p>
+                <div class="{{ legend.classes }}">
+                        {% if legend.icon %}
+                            {{ legend.icon }}
+                        {% endif %}
+                </div>
+                {{ legend.label }}
+            </p>
+        {% endfor %}
+    </div>	
+</div>
+
+<!-- JS and CSS Includes -->
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.css' type='text/css' />
+<script src='//d3js.org/d3.v3.min.js' charset='utf-8'></script>
+
+<script type='text/javascript'>{% include map.js map_name=map_name %}</script>

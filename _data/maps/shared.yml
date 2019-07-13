@@ -1,0 +1,14 @@
+# Documentation at https://docs.mapbox.com
+# TODO: use config file for map center
+
+# Access token for Mapbox
+mapbox_access_token: pk.eyJ1IjoibWlrbGItYzR0YiIsImEiOiJjam5kOGg3c2kwMDB3M3dwYXQyMDJpdzFtIn0.yKOyo193qF1quWsNwiFzug
+
+options:
+  container: map
+  style: mapbox://styles/miklb-c4tb/cjnozdzs41qlx2rqvf7mwfztt
+  zoom: 7.3
+  trackResize: true
+  dragPan: true
+  touchZoomRotate: true
+
