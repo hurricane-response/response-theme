@@ -16,7 +16,8 @@
 			<main class="content">
             {% if site.txtbot %}
 			<div class="text-bot">
-			<p>Text your zipcode to&#160;<a class="has-text-light" href="sms:8035004835"> 1-803-500-4835 </a>&#160; for
+			<p>Text your zipcode to&#160;
+                <a class="has-text-light" href="sms:{{ site.txtbot_number_plain }}">{{ site.txtbot_number_display }}</a>&#160; for
             local shelter information.</p>
 			</div>
             {% endif %}
@@ -64,18 +65,17 @@
     // Load access token from config
     mapboxgl.accessToken = '{{site.mapbox_access_token}}';
 
-    //TODO: move this to config.
+    // Center map from config
     const MAP_LOAD_CENTER = [{{ site.shelter_map_center }}];
 
     var map = new mapboxgl.Map({
-        // container id specified in the HTML
         container: 'map',
-        // style URL
         style: 'mapbox://styles/miklb-c4tb/cjnozdzs41qlx2rqvf7mwfztt',
-        // initial position in [lon, lat] format
         center: MAP_LOAD_CENTER,
-        // initial zoom
-        zoom: 7.3
+        zoom: 7.3,
+        trackResize: true,
+        dragPan: true,
+        touchZoomRotate: true
     });
 
 

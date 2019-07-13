@@ -13,41 +13,77 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: CfA Hurricane Response
-email: email@hurricane-response.org
-description: >- # this means to ignore newlines until "baseurl:"
-  No One's Coming - It's Up to Us
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-# URL to the page to volunteer
+########### INSTANCE-SPECIFIC SETTINGS ###########
+
+# ------------ General Settings ------------ #
+
+# Title of this response effort (used in header and displayed on most pages)
+title: CfA Hurricane Response
+
+# Email address to use for sending messages
+email: email@hurricane-response.org
+
+# Description of this response effort (only used in header meta tags, not displayed)
+description: >- #m this means to ignore newlines until "baseurl:"
+  Code for America 2019 Response
+
+# Subpath of your site, e.g. /blog (used for constructing relative/internal links)
+baseurl: ""
+
+# URL to the volunteer sign-up page
 help_url: "https://www.codeforamerica.org"
 
-logo: "https://avatars0.githubusercontent.com/u/43193416?s=400&u=8e1d97c94fa7a9611c8b8fa765e68c8fe86e2e7c"
 
-# Site settings
+# ------------ Text Bot Settings ------------ #
 # txtbot number - what triggers the bot, word, zipcode, etc
+txtbot: true
+
 # TODO: confirm how the bot is configured and repeatable
 txtbot_trigger: Hurricane
-# txtbot display - i.e. 1-800-555-1212 vs 18005551212
-textbot_display: 898211
+
+# Text Bot Phone Number, plain (18005551212) and for page display (1-800-555-1212)
+txtbot_number_plain: "18005551212"
+
+txtbot_number_display: "1-800-555-1212"
+
+# ------------ Map Settings ------------ #
+# Documentation at https://docs.mapbox.com
+# TODO: use config file for map center
+
+# Access token for Mapbox
+mapbox_access_token: pk.eyJ1IjoibWlrbGItYzR0YiIsImEiOiJjam5kOGg3c2kwMDB3M3dwYXQyMDJpdzFtIn0.yKOyo193qF1quWsNwiFzug
+
+# Center of map for shelters, e.g. -88.9159, 35.8198
+shelter_map_center: -88.9159, 35.8198
+
+# Center of map for pods, e.g. -88.9159, 35.8198
+pod_map_center: -88.9159, 35.8198
+
+# Endpoint/Location for shelter data
+shelter_endpoint: https://api.hurricane-response.org/api/v1/shelters/geo.json
+
+# Endpoint/Location for pod data
+pod_endpoint: https://api.hurricane-response.org/api/v1/distribution_points/geo.json
+
+
+########### COMMON SETTINGS ###########
+
+permalink: pretty
+
+# Base hostname & protocol for your site, e.g. http://example.com (not currently used)
+url: ""
+
+# Site logo (not currently used)
+logo: "https://avatars0.githubusercontent.com/u/43193416?s=400&u=8e1d97c94fa7a9611c8b8fa765e68c8fe86e2e7c"
 
 gtag: UA-125718262-3
 
 # Build settings
 markdown: kramdown
+#theme: minima
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
+  - jekyll-include-cache
 
-# mapbox access token
-# TODO: use config file for map center
-mapbox_access_token: pk.eyJ1IjoibWlrbGItYzR0YiIsImEiOiJjam5kOGg3c2kwMDB3M3dwYXQyMDJpdzFtIn0.yKOyo193qF1quWsNwiFzug
-
-shelter_map_center: -88.9159, 35.8198
-
-pod_map_center: -88.9159, 35.8198
-
-shelter_endpoint: https://hurricane-florence-api.herokuapp.com/api/v1/shelters/geo.json
-
-pod_endpoint: https://hurricane-florence-api.herokuapp.com/api/v1/distribution_points/geo.json
