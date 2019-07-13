@@ -395,6 +395,12 @@ a:active {
   -webkit-box-shadow: 9px 17px -19px rgba(0,0,0,0.75);
   -moz-box-shadow: 9px 17px -19px rgba(0,0,0,0.75);
   box-shadow: 9px 17px -19px rgba(0,0,0,0.75);
+  padding: 0;
+  max-width: 18rem;
+  font-size: 0.8rem;
+}
+.mapboxgl-popup-content.shelter-popup .shelter-details {
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 .shelter-popup > .mapboxgl-popup-content {
     padding: 0;
