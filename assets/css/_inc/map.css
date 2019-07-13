@@ -102,4 +102,24 @@
   margin-left:-25%;
   top:20px;
   }
-  .mapboxgl-ctrl-geocoder { min-width:100%; }
+  .mapboxgl-ctrl-geocoder { min-width:100%; 
+  }
+
+  .shelter-popup > .mapboxgl-popup-content {
+    padding: 0;
+  }
+  
+  .shelter-popup .popup-header {
+    color: var(--grey-light);
+    padding: .5em;
+    font-size: 1.2rem;
+    background: var(--cfablue);
+  }
+  
+  .shelter-popup .shelter-details {
+    padding: 2em 1em 1em 1em;
+  }
+
+  .mapboxgl-popup-content svg {
+    height: 1em;
+  }
