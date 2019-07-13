@@ -10,9 +10,7 @@ This site is a static [Jekyll](https://jekyllrb.com/) site served on [GitHub Pag
 
 See the Jekyll docs for [local installation](https://jekyllrb.com/docs/installation/)
 
-The theme build system uses [Gulp](https://gulpjs.com). Check their [Gulp quick start guide](https://gulpjs.com/docs/en/getting-started/quick-start) for local environment.
 
-There are two main Gulp tasks - `gulp build` and `gulp watch`. Build 
 
 
 ![Default site screenshot.](https://raw.githubusercontent.com/hurricane-response/florence_website/master/screenshot.png )
@@ -37,7 +35,7 @@ We wanted a site up fast, the volunteer team that started working on Hurricane F
 
 The problem we are trying to solve with a gem based theme is prevent duplicate work and expidite the process to lauch a new response site. After Florence we realized we were having to copy files over to a new repository so we could customize the name and map center among other reasons. Any new work added to a new site wouldn't get added to an existing response site. Not to mention, there wasn't any continuity in tracking issues or properly crediting contributions.
 
-Jekyll introduced gem based themes in 3.5. Subsequently around 3.6.2 release Ben Balter [released a plugin](https://github.com/benbalter/jekyll-remote-theme) that allows GitHub Pages hosted sites to use any gem based theme that was public on GitHub. The idea is, if we keep the presentational markup and base map code in a theme repository that each response site can use by overriding variables in the `_config.yml` file, it would be quick and easy to deploy a new response site while keeping all the code/issues/contributions in a single repository.
+Jekyll introduced [gem based themes](https://jekyllrb.com/docs/themes/) in 3.5. Subsequently around 3.6.2 release Ben Balter [released a plugin](https://github.com/benbalter/jekyll-remote-theme) that allows GitHub Pages hosted sites to use any gem based theme that was public on GitHub. The idea is, if we keep the presentational markup and base map code in a theme repository that each response site can use by overriding variables in the `_config.yml` file, it would be quick and easy to deploy a new response site while keeping all the code/issues/contributions in a single repository.
 
 ## Getting involved
 
