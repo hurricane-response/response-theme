@@ -1,0 +1,8 @@
+# txtbot.displayed - txtbot info displayed on the screen or not
+displayed: false
+# txtbot.sms_number - phone number to send text message trigger to
+sms_number: 18035004835
+# txtbot.display_number - i.e. 1-800-555-1212 vs 18005551212
+display_number: 1-803-500-4835
+# txtbot.trigger - what triggers the bot, word, zipcode, etc
+trigger: your zip code

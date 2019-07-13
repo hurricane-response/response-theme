@@ -15,6 +15,25 @@ See the Jekyll docs for [local installation](https://jekyllrb.com/docs/installat
 
 ![Default site screenshot.](https://raw.githubusercontent.com/hurricane-response/florence_website/master/screenshot.png )
 
+## Setup
+
+To get the right bundler version:
+```
+gem install bundler -v 2.0.1
+```
+
+Next step, installing packages:
+```
+bundle install
+```
+
+Run your local jekyll server to view your changes:
+```
+bundle exec jekyll serve
+```
+
+Then put the given 'server address' (including that last `/`) into the address bar of your browser.
+
 ## Configuration
 
 TODO:document configuation options

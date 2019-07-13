@@ -1,0 +1,5 @@
+{% if site.data.txtbot and site.data.txtbot.displayed == true %}
+<div class="text-bot">
+<p>Text {{ site.data.txtbot.trigger }} to&#160;<a class="has-text-light" href="sms:{{ site.data.txtbot.sms_number }}"> {{ site.data.txtbot.display_number }} </a>&#160;for local shelter information.</p>
+</div>
+{% endif %}
