@@ -40,6 +40,7 @@ map.on('load', function() {
             "fill-opacity": .5
         },*/
         paint: {
+            "circle-opacity": .7,
             // Use step expressions (https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
             // with three steps to implement three types of circles:
             //   * Blue, 20px circles when point count is less than 10

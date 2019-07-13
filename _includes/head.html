@@ -16,6 +16,9 @@
 	<link rel="manifest" href="site.webmanifest">
 	-->
 	<link rel="stylesheet" href= "{{ site.baseurl }}/assets/css/main.css">
+	{% if include.isMap==true %}
+		<link rel="stylesheet" href= "{{ site.baseurl }}/assets/css/map.css">
+	{% endif %}
 	{% seo %}
 	<meta name="theme-color" content="#fdfdfd">
 	<!-- MapBoxGL -->
