@@ -1,81 +1,44 @@
-/* Generic */
+/* Generic Link Styles */
 a {
     outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
-    /*color: var(--blue);*/
-}
-
-a:focus {
-    border-bottom: 1px solid var(--blue);
-}
-
-<<<<<<< Updated upstream:_sass/links.scss
-a:link {
-    color: #004b6a;
     color: var(--blue);
-=======
-a:active {
-    color: var(--highlight);
->>>>>>> Stashed changes:assets/css/_inc/links.css
 }
 
-a:hover {
-    border-bottom: 1px solid;
-}
-
-a:visited { 
-<<<<<<< Updated upstream:_sass/links.scss
-    color: #444444; 
-    color: var(--grey-dark);
-}
-
-a:focus {
-    border-bottom: 1px solid #004b6a;
-    border-bottom: 1px solid var(--blue);
-=======
-    /*color: var(--grey-dark);*/
-    color: orange;
-}
+a:visited { color: var(--grey-dark); }
+a:active { color: var(--highlight); }
+a:focus { border-bottom: 1px solid var(--blue); }
+a:hover { border-bottom: 1px solid; }
 
 
 /* Main Navigation */
-.mainnav a, .mainnav a:link {
+.mainnav a, 
+.mainnav a:link,
+.mainnav a:visited,
+.mainnav a:active,
+.mainnav a:focus {
     color: white;
->>>>>>> Stashed changes:assets/css/_inc/links.css
 }
 
 .mainnav a:focus {
-    border-bottom: 1px solid white;
-    color: white;
-}
-
-.mainnav a:active {
-    color: white;
+    border-bottom-color: white;
 }
 
 .mainnav a:hover {
-    border-bottom: 1px solid #cf1b41;
-    border-bottom: 1px solid var(--red);
-    color: #cf1b41;
+    border-bottom-color: var(--red);
     color: var(--red);
     background: white;
-}
-
-.mainnav a:visited {
-    color: pink;
 }
 
 
 /* Text Bot */
 .text-bot a:link {
-    color: #e5e5e5;
     color: var(--grey-light);
     font-size: 1.3em;
 }
 
 .text-bot a:hover {
     background-color: white;
-    color: #00a175;
     color: var(--green);
 }
