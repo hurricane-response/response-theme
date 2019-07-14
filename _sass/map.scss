@@ -1,141 +1,197 @@
 #map-container {
-    overflow: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#map-container #map {
+  width: 95vw;
+  height: 60vh;
+  margin: 0 auto;
+}
+
+.mapboxgl-ctrl-top-right div.mapboxgl-ctrl.mapboxgl-ctrl-group {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 0px;
+}
+
+.mapboxgl-ctrl-top-right div.mapboxgl-ctrl.mapboxgl-ctrl-group div.mapboxgl-ctrl-icon.mapboxgl-ctrl-geolocate {
+  position: relative;
+  order: 2;
+}
+
+.mapboxgl-ctrl-top-right div.mapboxgl-ctrl.mapboxgl-ctrl-group div.mapboxgl-ctrl-geolocate-label {
+  background-color: var(--turqoise);
+  padding: 5px 10px 5px 10px;
+  color: white;
+  font-size: 1.5em;
+  white-space: nowrap;
+  order: 1;
+  margin: 0px;
+  align-self: center;
+  height: 100%;
+}
+
+
+/* LEGEND LAYOUT */
+.map-legend {
+  padding: 1em .5em;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: flex-start;
+  align-content: stretch;
+  width: 95vw;
+  line-height: 3em;
+}
+
+.map-legend h3 {
+  border-color: var(--grey);
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  padding-right: .5em;
+  vertical-align: center;
+  line-height: 3em;
+}
+
+.legend-items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.legend-items .legend-item {
+  vertical-align: middle;
+  margin-left: 2em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 90%;
+}
+
+.legend-item-visual {
+  margin-right: .5em;
+  height: 3em;
+  flex: 0, 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend-item-label {
+  white-space: nowrap;
+}
+
+
+/* LEGEND LAYOUT CHANGES FOR SMALL SCREENS */
+@media (min-width: 900px) {  
+  #map-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
   }
   
   #map-container #map {
-    width: 95vw;
-    height: 60vh;
-    margin: 0 auto;
+    height: 75vh;
+  }
+
+  .map-legend {
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    width: unset;
+    line-height: unset;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 1em 2em;
+  }
+
+  .map-legend h3 {
+    justify-self: stretch;
+    align-self: flex-start;
+    margin: 0;
+    text-align: center;
+    padding: unset;
+    padding-bottom: .5em;
+    border-width: 0 0 1px 0;
+    width: 100%;
+    line-height: unset;
+  }
+
+  .legend-items {
+    height: 100%;
+    flex-flow: column nowrap;
+    justify-items: stretch;
+    align-content: space-between;
   }
   
-  .shelter-map_container {
-    height: 60vh;
-    position: relative;
-  }
-  
-  #map-container.shelter-map_container #map {
-    min-height: 60vh;
-    max-height: 60vh;
-  }
-  
-  .mapboxgl_ctrl_group {
-    position: relative;
-    display: flex;
+  .legend-items .legend-item {
+    vertical-align: unset;
+    margin-left: unset;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    background: orange;
+    font-size: 90%;
   }
-  
-  .mapboxgl_ctrl_group .mapboxgl-ctrl-icon.mapboxgl-ctrl-geolocate {
-    position: relative;
-    overflow: visible;
-    order: 2;
-  }
-  
-  .mapboxgl_ctrl_group .mapboxgl-ctrl-geolocate-label {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    border-radius: 1em 0 0 1em;
-    background-color: #399fd3;
-    background-color: var(--turqoise);
-    padding: 0 5px 0 15px;
-    width: auto;
-    color: white;
-    font-size: 1.5em;
-    white-space: nowrap;
-    order: 1;
-  /*  
-    transform: translateX(-100%);
-    height: 100%;*/
-  }
-  
-  .map-legend {
-    padding: 1em 2em;
-    background-color: #f9f9f9;
-  }
-  
-  .legend-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .map-legend-route {
-    border: 3px solid #e93f36;
-    width: 2em;
-    height: 0px;
-  }
-  
-  .map-legend-color {
-    height: 1em;
-    width: 1em;
-    border-radius: 50%;
-  }
-  
-  .step-10 {
-    background-color: #4298bb;
-    background-color: var(--cyan);
-  }
-  
-  .step-20 {
-    background-color: #fedd44;
-    background-color: var(--yellow);
-    height: 2em;
-    width: 2em;
-  }
-  
-  .step-30 {
-    background-color: #e87d2b;
-    background-color: var(--orange);
-    height: 3em;
-    width: 3em;
-  }
-  
-  @media (min-width: 600px) {
-    .legend-items {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-  
-    .legend-items p {
-      padding-top: .3em;
-    }
-  }
-  
-  .geocoder {
-    position: absolute;
-    z-index: 1;
-    width: 80%;
-    left: 30%;
-    margin-left: -25%;
-    top: 20px;
-  }
-  
-  .mapboxgl-ctrl-geocoder {
-    min-width: 100%;
-  }
-  
-  .shelter-popup>.mapboxgl-popup-content {
-    padding: 0;
-  }
-  
-  .shelter-popup .popup-header {
-    background: #399fd3;
-    background: var(--cfablue);
-    padding: .5em;
-    color: #e5e5e5;
-    color: var(--grey-light);
-    font-size: 1.2rem;
-  }
-  
-  .shelter-popup .shelter-details {
-    padding: 2em 1em 1em 1em;
-  }
-  
-  .mapboxgl-popup-content svg {
-    height: 1em;
-  }
+}
+
+/* LEGEND ITEMS */
+.map-legend-route {
+  border: 3px solid var(--red);
+  width: 2em;
+  height: 0px;
+}
+
+.map-legend-icon {
+  width: unset;
+  height: unset;
+}
+
+.map-legend-color {
+  border-radius: 50%;
+}
+
+.step-10 {
+  background-color: var(--cyan);
+  height: 18px; 
+  width: 18px;
+}
+
+.step-20 {
+  background-color: var(--yellow);
+  height: 25px;
+  width: 25px;
+}
+
+.step-30 {
+  background-color: var(--orange);
+  height: 30px;
+  width: 30px;
+}
+
+
+.shelter-popup>.mapboxgl-popup-content {
+  padding: 0;
+}
+
+.shelter-popup .popup-header {
+  background: var(--cfablue);
+  padding: .5em;
+  color: var(--grey-light);
+  font-size: 1.2rem;
+}
+
+.shelter-popup .shelter-details {
+  padding: 2em 1em 1em 1em;
+}
+
+.mapboxgl-popup-content svg {
+  height: 1em;
+}

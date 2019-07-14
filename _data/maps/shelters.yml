@@ -7,13 +7,13 @@ legend:
     label:   Evacuation Route
     classes: map-legend-route
   -
-    label:   10 Shelters or less
+    label:   '> 10 Shelters'
     classes: map-legend-color step-10
   -
     label:   10-20 Shelters
     classes: map-legend-color step-20
   -
-    label:   More than 20 Shelters
+    label:   20+ Shelters
     classes: map-legend-color step-30
   -
     label:   Shelter

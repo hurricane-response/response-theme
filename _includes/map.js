@@ -110,24 +110,31 @@ map.on('load', function() {
     var navControl = new mapboxgl.NavigationControl();
     map.addControl(navControl, 'bottom-right');
 
-    var geoLocateCtl = new CustomGeoLocateControl1({
+    var geoLocateCtl = new CustomGeoLocateControl({
         className:         'control-geolocate',
         positionOptions:   { enableHighAccuracy: true },
         trackUserLocation: true
     });
     map.addControl(geoLocateCtl);
+
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        placeholder: "Search by address...",
+        mapboxgl: mapboxgl
+    });
+    map.addControl(geocoder, 'top-left');
+    
 });
 
-var geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    placeholder: "Search by address.",
-    mapboxgl: mapboxgl
-});
+/***************************************************************************
+ * CUSTOM METHODS/CLASSES
+ ***************************************************************************/
 
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-
-
-class CustomGeoLocateControl1 extends mapboxgl.GeolocateControl {
+/**
+ * A child of an out-of-the-box boject that wraps the onAdd method, allowing
+ * us to add an additional DIV to this feature.
+ */
+class CustomGeoLocateControl extends mapboxgl.GeolocateControl {
     constructor (options) { super(options); }
     onAdd (map) {
         super.onAdd(map);
@@ -139,10 +146,6 @@ class CustomGeoLocateControl1 extends mapboxgl.GeolocateControl {
         return this._container;
     }
 }
-
-/***************************************************************************
- * METHODS
- ***************************************************************************/
 
 /**
  * Changes the cursor to a pointer on hovering, back to arrow when leaving
