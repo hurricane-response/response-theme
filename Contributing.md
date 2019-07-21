@@ -47,3 +47,13 @@ Gulp files has two main tasks: `build` and `watch`
 
 Reminder that this is a [Jekyll theme](https://jekyllrb.com/docs/themes/), not a stand alone site. We optimized the build tools to both allow customization by the individual response sites by overriding `main.css` locally as well as is.
 
+## Where to start?
+
+The [issues](https://github.com/hurricane-response/response-theme/issues). We ask that you create an issue before starting work on something, even if a new feature. We have found that robust discussion before starting a new feature or large refactor has the greatest chance of success. Discussions can occur in the issue created or in Slack.
+
+
+**Note** sometimes during an active response focus is on immediate needs and those of our partners. We respectfully ask that you use the issues and `@` one of the contributors.
+
+### Whoa! I just want to fix a typo.
+
+Yes! We understand that frustration. GitHub does a great job of providing an in-browser experience for this scenario. If you don't have a GitHub account, first [create an account](https://github.com/join) and then navigate to the file with the minor change. In the upper right corner, next to the trash can symbol is a pencil. That icon will allow you to start the editing process. GitHub automagically will create a fork with your change and walk you through submitting it as a pull request.
