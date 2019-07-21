@@ -37,7 +37,7 @@ install the Gulp dependencies
 npm i
 ```
 
-Gulp files has two main tasks: `build` and `watch`
+`Gulpfile` has two main tasks: `build` and `watch`
 
 `build` does just that - builds the `_site` directory.
 
