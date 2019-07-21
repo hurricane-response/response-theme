@@ -4,14 +4,6 @@
 
 **Status**: In development, deployed for 2019 hurricane season.
 
-## Installation
-
-This site is a static [Jekyll](https://jekyllrb.com/) site served on [GitHub Pages](https://pages.github.com/).
-
-See the Jekyll docs for [local installation](https://jekyllrb.com/docs/installation/)
-
-
-
 
 ![Default site screenshot.](https://raw.githubusercontent.com/hurricane-response/florence_website/master/screenshot.png )
 
