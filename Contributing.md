@@ -68,5 +68,15 @@ Commit messages should follow best practices, including explaining the context o
 
 If you're lost about what this even means, please see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) for a start.
 
+
 ## Pull Requests
+
+All Pull Requests should have an accompanying issue. We realize during an active response this policy is fluid and we do require peer review for all PRs.
+
+We ask that you follow the template for Pull Requests in the same manner as issues.
+
+We also ask that if your PR no longer merges cleanly, use `rebase master` rather than `merge master`.
+
+Include an issue reference like Closes #XXXX or Fixes #XXXX in commits that close an issue. Including references automatically closes the issue on a merge.
+
 
