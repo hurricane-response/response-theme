@@ -49,7 +49,9 @@ Reminder that this is a [Jekyll theme](https://jekyllrb.com/docs/themes/), not a
 
 ## Where to start?
 
-The [issues](https://github.com/hurricane-response/response-theme/issues). We ask that you create an issue before starting work on something, even if a new feature. We have found that robust discussion before starting a new feature or large refactor has the greatest chance of success. Discussions can occur in the issue created or in Slack.
+The [issues](https://github.com/hurricane-response/response-theme/issues). We ask that you create an issue before starting work on something, even if a new feature. We also ask that you adhere as best as possible to the issue template to help us better triage. Certainly small,minor typos do not require a novel, but the more information the better.
+
+We have found that robust discussion before starting a new feature or large refactor has the greatest chance of success. Discussions can occur in the issue created or in Slack.
 
 
 **Note** sometimes during an active response focus is on immediate needs and those of our partners. We respectfully ask that you use the issues and `@` one of the contributors.
