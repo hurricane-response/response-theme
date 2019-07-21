@@ -79,4 +79,10 @@ We also ask that if your PR no longer merges cleanly, use `rebase master` rather
 
 Include an issue reference like Closes #XXXX or Fixes #XXXX in commits that close an issue. Including references automatically closes the issue on a merge.
 
+## Review
 
+All Pull Requests require peer review before merging to master. Pull Requests should also pass all tests before consideration of merging unless there is a clear reason.
+
+## Credits
+
+Special thanks to the Moby project and their [Contributing Guidelines](for inspiration).
