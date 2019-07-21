@@ -15,25 +15,25 @@ We also use [Gulp](https://gulpjs.com) for our build tool. Though Jekyll has sup
 
 Clone the repository
 
-```
+```{bash}
 git clone git@github.com:hurricane-response/response-theme.git
 ```
 
 navigate to the directory
 
-```
+```{bash}
 cd response-theme
 ```
 
 install the Jekyll dependencies
 
-```
+```{bash}
 bundle install
 ```
 
 install the Gulp dependencies
 
-```
+```{bash}
 npm i
 ```
 
