@@ -59,3 +59,14 @@ We have found that robust discussion before starting a new feature or large refa
 ### Whoa! I just want to fix a typo.
 
 Yes! We understand that frustration. GitHub does a great job of providing an in-browser experience for this scenario. If you don't have a GitHub account, first [create an account](https://github.com/join) and then navigate to the file with the minor change. In the upper right corner, next to the trash can symbol is a pencil. That icon will allow you to start the editing process. GitHub automagically will create a fork with your change and walk you through submitting it as a pull request.
+
+## Commit Messages
+
+The message should be a short summary (max. 50 chars) written in the imperative, followed by an optional, more detailed explanatory text separated from the summary by an empty line.
+
+Commit messages should follow best practices, including explaining the context of the problem and solution, including in caveats or follow up changes required. They should tell the story of the change and provide readers understanding of what led to it.
+
+If you're lost about what this even means, please see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) for a start.
+
+## Pull Requests
+
