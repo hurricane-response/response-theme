@@ -33,6 +33,8 @@ Jekyll introduced [gem based themes](https://jekyllrb.com/docs/themes/) in 3.5. 
 
 Our [getting started](https://docs.google.com/document/d/1f_ODFvGzrOihfkckSxJ8hU4d9I3b389Rx4aAEFEHvTw/edit?usp=sharing) document serves as the best entry for the project for all types of contributions.
 
+Also see our [Contributing file](Contributing.md) for repo specific contributions.
+
 ## Open source licensing info
 1. [LICENSE](LICENSE)
 2. [Code of Conduct](Code_of_Conduct.md)
