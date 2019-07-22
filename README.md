@@ -1,6 +1,6 @@
 # Code For America Disaster Response Hub
 
-**Description**:  A quick response web hub for disaster response and sharing maps and data from [Shelter & POD API](https://github.com/hurricane-response/florence-api)
+**Description**:  A Jekyll theme optimized for rapid response to mulitple events to build web hubs for disaster response and sharing maps and data from [Shelter & POD API](https://github.com/hurricane-response/florence-api)
 
 **Status**: In development, deployed for 2019 hurricane season.
 
