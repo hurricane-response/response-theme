@@ -16,7 +16,7 @@ We also use [Gulp](https://gulpjs.com) for our build tool. Though Jekyll has sup
 Clone the repository
 
 ```{bash}
-git clone git@github.com:hurricane-response/response-theme.git
+git clone https://github.com/hurricane-response/response-theme.git
 ```
 
 navigate to the directory
@@ -43,9 +43,15 @@ npm i
 
 `watch` watches both `assets/css/_inc` directory to check for CSS changes as well as Jekyll file changes and rebuilds the appopriate files.
 
-**A note about the CSS** All CSS is in the `_inc` directory as plain CSS. Current browser support for variables is strong, but we use PostCSS to fill in browser compatibility. PostCSS also compiles `assets/css/_inc/main.css` into `assets/css/main.css`. You should never need to edit `assets/css/main.css` file directly.
+**A note about the CSS** All CSS is in the `_inc` directory is plain CSS. Current browser support for variables is strong, but we use PostCSS to fill in browser compatibility. PostCSS also compiles `assets/css/_inc/main.css` into `assets/css/main.css`. You should never need to edit `assets/css/main.css` file directly.
 
-Reminder that this is a [Jekyll theme](https://jekyllrb.com/docs/themes/), not a stand alone site. We optimized the build tools to both allow customization by the individual response sites by overriding `main.css` locally as well as is.
+Reminder that this is a [Jekyll theme](https://jekyllrb.com/docs/themes/), not a stand alone site.
+
+We optimized the build tools in this project with three goals:
+
+* quick deploy.
+* provide an out-of-the-box experience when using the theme as is.
+* allow overriding `main.css` in the individual response site for event specific customizations.
 
 ## Where to start?
 
@@ -58,7 +64,7 @@ We have found that robust discussion before starting a new feature or large refa
 
 ### Whoa! I just want to fix a typo.
 
-Yes! We understand that frustration. GitHub does a great job of providing an in-browser experience for this scenario. If you don't have a GitHub account, first [create an account](https://github.com/join) and then navigate to the file with the minor change. In the upper right corner, next to the trash can symbol is a pencil. That icon will allow you to start the editing process. GitHub automagically will create a fork with your change and walk you through submitting it as a pull request.
+Yes! We understand that frustration. GitHub does a great job of providing an in-browser experience for this scenario. If you don't have a GitHub account, first [create an account](https://github.com/join), then we ask you to create an issue for your suggested fix. Then navigate to the file with the minor change. In the upper right corner, next to the trash can symbol is a pencil. That icon will allow you to start the editing process. GitHub automagically will create a fork with your change and walk you through submitting it as a pull request.
 
 ## Commit Messages
 
@@ -71,7 +77,11 @@ If you're lost about what this even means, please see [How to Write a Git Commit
 
 ## Pull Requests
 
-All Pull Requests should have an accompanying issue. We realize during an active response this policy is fluid and we do require peer review for all PRs.
+All Pull Requests should have an accompanying issue and will require review before merging.
+
+**Note During an active response, this policy can be fluid, as events on the ground change and fixes are often needed ASAP. During those times, we ask you get an explicit OK or instruction from a maintainer before creating a PR not tied to an issue.
+
+Only maintainers can merge PRs, and only they can decide whether to waive or defer a review on a PR. As a rule, this doesn't happen often, and only does during an active response or major service outage.**
 
 We ask that you follow the template for Pull Requests in the same manner as issues.
 
