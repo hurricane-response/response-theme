@@ -21,19 +21,19 @@ git clone https://github.com/hurricane-response/response-theme.git
 
 navigate to the directory
 
-```{bash}
+```bash
 cd response-theme
 ```
 
 install the Jekyll dependencies
 
-```{bash}
+```bash
 bundle install
 ```
 
 install the Gulp dependencies
 
-```{bash}
+```bash
 npm i
 ```
 
