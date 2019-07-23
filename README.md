@@ -4,7 +4,7 @@
 
 **Status**: In development, deployed for 2019 hurricane season.
 
-![](https://raw.githubusercontent.com/hurricane-response/response-theme/master/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/hurricane-response/response-theme/master/screenshot.png)
 
 ## Configuration
 
