@@ -4,13 +4,7 @@
 
 **Status**: In development, deployed for 2019 hurricane season.
 
-
-Run your local jekyll server to view your changes:
-```
-bundle exec jekyll serve
-```
-
-Then put the given 'server address' (including that last `/`) into the address bar of your browser.
+![](https://raw.githubusercontent.com/hurricane-response/response-theme/master/screenshot.png)
 
 ## Configuration
 
