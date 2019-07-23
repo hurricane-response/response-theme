@@ -64,7 +64,7 @@ We have found that robust discussion before starting a new feature or large refa
 
 ### Whoa! I just want to fix a typo.
 
-Yes! We understand that frustration. GitHub does a great job of providing an in-browser experience for this scenario. If you don't have a GitHub account, first [create an account](https://github.com/join), then we ask you to create an issue for your suggested fix. Then navigate to the file with the minor change. In the upper right corner, next to the trash can symbol is a pencil. That icon will allow you to start the editing process. GitHub automagically will create a fork with your change and walk you through submitting it as a pull request.
+Yes! We understand that frustration. GitHub does a great job of providing an [in-browser experience for editing files](https://help.github.com/en/articles/editing-files-in-your-repository). If you don't have a GitHub account, first [create an account](https://github.com/join), then we ask you to create an issue for your suggested fix. Then navigate to the file with the minor change. In the upper right corner, next to the trash can symbol is a pencil. That icon will allow you to start the editing process. GitHub automagically will create a fork with your change and walk you through submitting it as a pull request.
 
 ![screencast of in browser pull requests](https://raw.githubusercontent.com/hurricane-response/response-theme/master/github_inbrowser_pullrequest.gif)
 
