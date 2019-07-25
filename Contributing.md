@@ -97,4 +97,4 @@ All Pull Requests require peer review before merging to master. Pull Requests sh
 
 ## Credits
 
-Special thanks to the Moby project and their [Contributing Guidelines](for inspiration).
+Special thanks to the Moby project and their [Contributing Guidelines](https://github.com/moby/moby/blob/master/CONTRIBUTING.md) for inspiration.
