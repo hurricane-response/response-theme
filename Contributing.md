@@ -21,19 +21,19 @@ git clone https://github.com/hurricane-response/response-theme.git
 
 navigate to the directory
 
-```{bash}
+```bash
 cd response-theme
 ```
 
 install the Jekyll dependencies
 
-```{bash}
+```bash
 bundle install
 ```
 
 install the Gulp dependencies
 
-```{bash}
+```bash
 npm i
 ```
 
@@ -97,4 +97,4 @@ All Pull Requests require peer review before merging to master. Pull Requests sh
 
 ## Credits
 
-Special thanks to the Moby project and their [Contributing Guidelines](for inspiration).
+Special thanks to the Moby project and their [Contributing Guidelines](https://github.com/moby/moby/blob/master/CONTRIBUTING.md) for inspiration.
