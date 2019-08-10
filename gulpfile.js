@@ -1,27 +1,31 @@
 "use strict";
-
-// Load plugins
-
-const browsersync = require("browser-sync").create();
-const cp = require("child_process");
-const cssnano = require("cssnano");
+// gulp 
 const gulp = require("gulp");
-const sourcemaps = require("gulp-sourcemaps");
-const del = require("del");
-const plumber = require("gulp-plumber");
-const postcss = require("gulp-postcss");
-const rename = require("gulp-rename");
-const easyimport = require("postcss-easy-import");
-const csslogical = require("postcss-logical");
-const cssCustomMedia = require("postcss-custom-media");
-const cssCustomSelectors = require("postcss-custom-selectors");
-const cssMediaMinMax = require("postcss-media-minmax");
-const cssPresentEnv = require("postcss-preset-env");
-const cssDeclarationSorter = require('css-declaration-sorter');
+
+// needed for Jekyll command
+const cp = require("child_process");
+
+// load all of plugins in devDependencies from package.json
+const plugin = require('gulp-load-plugins')({
+  pattern: ["*"],
+  overridePattern: true,
+  scope: ["devDependencies"],
+  rename: {
+    'postcss-easy-import': 'easyImport',
+    'postcss-preset-env': 'cssPresentEnv',
+    'css-declaration-sorter': 'cssDeclarationSorter'
+  }
+  
+});
+
+const onError = (err) => {
+  console.log(err);
+};
+
 
 // BrowserSync
 function browserSync(done) {
-  browsersync.init({
+  plugin.browserSync.init({
     server: {
       baseDir: "./_site/"
     },
@@ -32,40 +36,40 @@ function browserSync(done) {
 
 // BrowserSync Reload
 function browserSyncReload(done) {
-  browsersync.reload();
+  plugin.browserSync.reload();
   done();
 }
 
 // Clean assets
 function clean() {
-  return del(["./_site/assets/"]);
+  return plugin.del(["./_site/assets/"]);
 }
 
 
 
-// CSS task
+// CSS task using PostCSS
 function css() {
-  var plugins = [
-    easyimport(),
-    csslogical({
-      dir: 'ltr'
-    }),
-    cssCustomMedia(),
-    cssCustomSelectors(),
-    cssMediaMinMax(),
-    cssPresentEnv(),
-    cssDeclarationSorter({
+  var postcssPlugins = [
+    // import CSS files using @import
+    plugin.easyImport(),
+    // PostCSS plugin converts modern CSS to polyfills
+    // based on browser support in .browserslistrc 
+    plugin.cssPresentEnv(),
+    // re-order declartions based on property
+    plugin.cssDeclarationSorter({
       order: 'concentric-css'
     })
   ]
   return gulp
     .src("./assets/css/_inc/main.css")
-    .pipe(sourcemaps.init())
-    .pipe(postcss(plugins))
-    .pipe(sourcemaps.write('.'))
+    .pipe(plugin.sourcemaps.init())
+    .pipe(plugin.postcss(postcssPlugins))
+    .pipe(plugin.sourcemaps.write('.'))
+    // We need to write the compiled CSS for local development
     .pipe(gulp.dest("./_site/assets/css/"))
+    // This is the compiled file the remote theme will use
     .pipe(gulp.dest("./assets/css/"))
-    .pipe(browsersync.stream());
+    .pipe(plugin.browserSync.stream());
 }
 
 // Jekyll
