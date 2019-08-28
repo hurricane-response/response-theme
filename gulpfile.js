@@ -81,6 +81,7 @@ function jekyll() {
 
 // Watch files
 function watchFiles() {
+  gulp.series(jekyll);
   gulp.watch("./assets/css/_inc/*", css);
   gulp.series(css, browserSyncReload)
   gulp.watch(
@@ -97,7 +98,7 @@ function watchFiles() {
 
 // define complex tasks
 const build = gulp.series(clean, jekyll, css);
-const watch = gulp.parallel(watchFiles, browserSync);
+const watch = gulp.series(clean, jekyll, css, gulp.parallel(watchFiles, browserSync));
 
 // export tasks
 
