@@ -293,12 +293,12 @@ a:active {
 }
 #map-container {
     overflow: hidden;
-  }
+}
 #map-container #map {
-      margin: 0 auto;
-      width: 95vw;
-      height: 75vh;
-  }
+    margin: 0 auto;
+    width: 95vw;
+    height: 75vh;
+}
 .shelter-map_container {
     position: relative;
     height: 90vh;
@@ -306,11 +306,11 @@ a:active {
 #map-container.shelter-map_container #map {
     min-height: 90vh;
     max-height: 90vh;
-  }
+}
 .mapboxgl-ctrl-top-right div {
     position: relative;
     overflow: visible;
-  }
+}
 .mapboxgl-ctrl-top-right div::after {
     display: flex;
     position: absolute;
@@ -329,16 +329,16 @@ a:active {
     font-size: 2em;
     white-space: nowrap;
     content: 'Locate Yourself';
-  }
+}
 .map-legend {
-      background-color: #f9f9f9;
-      padding: 1em 2em;
-  }
+    background-color: #f9f9f9;
+    padding: 1em 2em;
+}
 .legend-items {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .map-legend-route {
     border: 3px solid #e93f36;
     width: 2em;
@@ -366,28 +366,29 @@ a:active {
     height: 3em;
 }
 @media (min-width: 600px) {
-  .legend-items {
-    flex-direction: row;
-    justify-content: space-around;
-  }
+    .legend-items {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 
-  .legend-items p {
-    padding-top: .3em;
-  }
+    .legend-items p {
+        padding-top: .3em;
+    }
 }
 .geocoder {
-  position:absolute;
-  top:20px;
-  left:30%;
-  z-index:1;
-  margin-left:-25%;
-  width:80%;
-  }
-.mapboxgl-ctrl-geocoder { min-width:100%; 
-  }
-.shelter-popup > .mapboxgl-popup-content {
+    position: absolute;
+    top: 20px;
+    left: 30%;
+    z-index: 1;
+    margin-left: -25%;
+    width: 80%;
+}
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+.shelter-popup>.mapboxgl-popup-content {
     padding: 0;
-  }
+}
 .shelter-popup .popup-header {
     background: #399fd3;
     background: var(--cfablue);
@@ -395,13 +396,46 @@ a:active {
     color: #e5e5e5;
     color: var(--grey-light);
     font-size: 1.2rem;
-  }
+}
 .shelter-popup .shelter-details {
     padding: 2em 1em 1em 1em;
-  }
+}
 .mapboxgl-popup-content svg {
     height: 1em;
+}
+/*
+    Media queries for more narrow devices
+    for arrangment of elements.
+*/
+@media (max-width: 640px) {
+  #map-container.shelter-map_container #map {
+    width: 100%;
   }
+
+  .mapboxgl-control-container {
+    width: 100%;
+  }
+
+  .mapboxgl-ctrl-top-right .mapboxgl-ctrl.mapboxgl-ctrl-group {
+    transform: translateX(287%);
+    margin: 0;
+    margin-top: 2.5px;
+    margin-right: 50%;
+  }
+
+  .mapboxgl-ctrl-top-right {
+    width: 100%;
+  }
+
+  .mapboxgl-ctrl-top-right div::after {
+    border-radius: .2em 0 0 .2em;
+    font-size: 1.6em;
+  }
+
+  .geocoder {
+    top: 35px;
+  }
+}
 .colophon {
     background-color: #e5e5e5;
     background-color: var(--grey-light);
