@@ -108,23 +108,47 @@
     min-width: 100%;
 }
 
+#map .mapboxgl-popup.shelter-popup.mapboxgl-popup-anchor-top {
+    display: block;
+}
+
 .shelter-popup>.mapboxgl-popup-content {
+    display: block;
     padding: 0;
 }
 
 .shelter-popup .popup-header {
     color: var(--grey-light);
-    padding: .5em;
     font-size: 1.2rem;
+    padding: 0.3rem;
+    padding-right: 2rem; /* to give room for popup closing 'x' */
     background: var(--cfablue);
 }
 
+.shelter-popup .popup-header .is-size-4 {
+  margin: 0;
+}
+
 .shelter-popup .shelter-details {
-    padding: 2em 1em 1em 1em;
+    padding: 0;
+    padding-top: 1em;
+}
+
+.shelter-popup .shelter-details .content {
+    font-size: 1.3em;
+}
+
+.shelter-popup .shelter-details .content svg {
+    height: 1.4rem;
 }
 
 .mapboxgl-popup-content svg {
     height: 1em;
+}
+
+.shelter-popup .mapboxgl-popup-close-button {
+    font-size: 2.5em;
+    line-height: .7em;
 }
 
 /*
