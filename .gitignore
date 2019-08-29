@@ -3,4 +3,5 @@ _site
 .jekyll-metadata
 node_modules
 
-assets/css/*
+assets/css/main.css
+assets/css/main.css.map
