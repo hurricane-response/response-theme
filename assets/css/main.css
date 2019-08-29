@@ -388,6 +388,27 @@ a:active {
 .mapboxgl-ctrl-geocoder {
     min-width: 100%;
 }
+/* Floating popup */
+.mapboxgl-popup-content.shelter-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100;
+    box-shadow: 9px 17px -19px rgba(0,0,0,0.75);
+    border: 1px solid rgba(0, 0, 0, .2);
+    padding: 0;
+    max-width: 18rem;
+    font-size: 0.8rem;
+}
+/* Floating popup */
+.mapboxgl-popup-content.shelter-popup .shelter-details {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+/* Floating popup */
+#map-container .mapboxgl-popup-tip {
+    display: none;
+}
 #map .mapboxgl-popup.shelter-popup.mapboxgl-popup-anchor-top {
     display: block;
 }
