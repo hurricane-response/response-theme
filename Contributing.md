@@ -45,6 +45,8 @@ npm i
 
 **A note about the CSS** All CSS is in the `_inc` directory is plain CSS. Current browser support for variables is strong, but we use PostCSS to fill in browser compatibility. PostCSS also compiles `assets/css/_inc/main.css` into `assets/css/main.css`. You should never need to edit `assets/css/main.css` file directly.
 
+**Note** The Jekyll Gulp task replaces the need to use `bundle exec jekyll serve`. Instead, use `gulp watch`.
+
 Reminder that this is a [Jekyll theme](https://jekyllrb.com/docs/themes/), not a stand alone site.
 
 We optimized the build tools in this project with three goals:
@@ -52,6 +54,8 @@ We optimized the build tools in this project with three goals:
 * quick deploy.
 * provide an out-of-the-box experience when using the theme as is.
 * allow overriding `main.css` in the individual response site for event specific customizations.
+
+When submitting a new Pull Request with CSS changes, make sure to edit a file in `_inc` and commit **all** file changes with your PR.
 
 ## Where to start?
 
