@@ -98,7 +98,7 @@
 .geocoder {
     position: absolute;
     z-index: 1;
-    width: 80%;
+    width: fit-content;
     left: 30%;
     margin-left: -25%;
     top: 20px;
