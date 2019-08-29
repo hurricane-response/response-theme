@@ -381,7 +381,9 @@ a:active {
     left: 30%;
     z-index: 1;
     margin-left: -25%;
-    width: 80%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 .mapboxgl-ctrl-geocoder {
     min-width: 100%;
