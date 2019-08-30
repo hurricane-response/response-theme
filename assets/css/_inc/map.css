@@ -165,7 +165,12 @@
 }
 
 .shelter-popup .shelter-details .content svg {
-    height: 1.4rem;
+    height: 1.2rem;
+    vertical-align: middle;
+}
+
+.shelter-details a {
+    text-decoration: underline;
 }
 
 .mapboxgl-popup-content svg {
