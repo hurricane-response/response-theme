@@ -146,11 +146,6 @@ map.on('load', function() {
                 className: 'shelter-popup'
             }).setHTML(popupTemplate(props));
             popup.setLngLat(coords).addTo(map);
-
-            // Put popup in the DOM on top of everything
-            let popupNode = popup._container.lastChild;
-            popupNode.classList.add('shelter-popup');
-            document.body.append(popupNode);
         });
         // Change the cursor to a pointer when the mouse is over the unclustered-point layer.
         map.on('mouseenter', 'unclustered-point', function () {
