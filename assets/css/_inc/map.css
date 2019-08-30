@@ -169,6 +169,10 @@
     vertical-align: middle;
 }
 
+.shelter-details a {
+    text-decoration: underline;
+}
+
 .mapboxgl-popup-content svg {
     height: 1em;
 }

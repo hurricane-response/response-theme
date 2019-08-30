@@ -439,6 +439,9 @@ a:active {
     vertical-align: middle;
     height: 1.2rem;
 }
+.shelter-details a {
+    text-decoration: underline;
+}
 .mapboxgl-popup-content svg {
     height: 1em;
 }
