@@ -61,6 +61,7 @@
 
     //TODO: move this to config.
     const MAP_LOAD_CENTER = [{{ site.shelter_map_center }}];
+    const ZOOM = [{{ site.shelter_zoom }}];
 
     var map = new mapboxgl.Map({
         // container id specified in the HTML
@@ -70,7 +71,7 @@
         // initial position in [lon, lat] format
         center: MAP_LOAD_CENTER,
         // initial zoom
-        zoom: 7.3
+        zoom: ZOOM
     });
 
 
