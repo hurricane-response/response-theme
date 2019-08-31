@@ -42,6 +42,6 @@ shelter_map_center: -88.9159, 35.8198
 
 pod_map_center: -88.9159, 35.8198
 
-shelter_endpoint: https://hurricane-florence-api.herokuapp.com/api/v1/shelters/geo.json
+shelter_endpoint: https://api.hurricane-response.org/api/v1/shelters/geo.json
 
-pod_endpoint: https://hurricane-florence-api.herokuapp.com/api/v1/distribution_points/geo.json
+pod_endpoint: https://api.hurricane-response.org/api/v1/distribution_points/geo.json
