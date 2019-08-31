@@ -264,6 +264,18 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
      * @returns {string}
      */
     function popupTemplate(shelter) {
+
+        // Takes care of null here
+        let shelterPets = shelter.pets_notes;
+        if (shelterPets === 'null' || shelterPets === null) {
+            shelterPets = 'Unknown';
+        }
+
+        let shelterNotes = shelter.notes
+        if (shelterNotes === 'null' || shelterNotes === null) {
+            shelterNotes = 'None';
+        }
+
         const phoneLink = `
             <div class="phone">
                 <svg id="icon-phone" viewBox="0 0 32 32" aria-label="phone icon">
@@ -285,7 +297,7 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
             <div class="note">
                 <label><strong>Note:</strong></label>
                 <div class="note-details" aria-label="Notes for shelter">
-                    ${urlsToAnchors(shelter.notes)}
+                    ${urlsToAnchors(shelterNotes)}
                 </div>
             </div>
         `;
@@ -293,7 +305,7 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
             <div class="note">
                 <label><strong>Pets:</strong></label>
                 <span class="note-details" aria-label="Notes for shelter pets policy">
-                    ${urlsToAnchors(shelter.pets_notes)}
+                    ${urlsToAnchors(shelterPets)}
                 </span>
             </div>
         `;
