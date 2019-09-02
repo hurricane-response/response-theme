@@ -265,15 +265,14 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
      */
     function popupTemplate(shelter) {
 
-        // Takes care of null here
-        let shelterPets = shelter.pets_notes;
-        if (shelterPets === 'null' || shelterPets === null) {
-            shelterPets = 'Unknown';
-        }
+        // These seem to come in as proper `null` when manually tested
+        if (shelter.address === 'null') { shelter.address = null }
+        if (shelter.pets === 'null') { shelter.pets = null }
+        if (shelter.notes === 'null') { shelter.notes = null }
 
-        let shelterNotes = shelter.notes
-        if (shelterNotes === 'null' || shelterNotes === null) {
-            shelterNotes = 'None';
+        let petsExtraNotes = shelter.pets_notes;
+        if (!!petsExtraNotes === 'null' || petsExtraNotes) {
+            petsExtraNotes = '';
         }
 
         const phoneLink = `
@@ -297,16 +296,19 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
             <div class="note">
                 <label><strong>Note:</strong></label>
                 <div class="note-details" aria-label="Notes for shelter">
-                    ${urlsToAnchors(shelterNotes)}
+                    ${urlsToAnchors(shelter.notes)}
                 </div>
             </div>
         `;
         const petsNote = `
             <div class="note">
                 <label><strong>Pets:</strong></label>
-                <span class="note-details" aria-label="Notes for shelter pets policy">
-                    ${urlsToAnchors(shelterPets)}
+                <span class="note-details allows-pets" aria-label="Does this shelter allow pets?">
+                    ${urlsToAnchors(shelter.pets) || ''}
                 </span>
+                <div class="note-details pets-notes" aria-label="Notes for shelter pets policy">
+                    ${urlsToAnchors(petsExtraNotes) || petsExtraNotes}
+                </div>
             </div>
         `;
         return `
@@ -330,7 +332,7 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
                     </div>
                     ${!!shelter.address ? '<br/>' : ``}
                     ${isPhone(shelter) ? phoneLink : ``}
-                    ${!!shelter.pets_notes ? petsNote : ``}
+                    ${!!shelter.pets || !!petsExtraNotes ? petsNote : ``}
                     ${!!shelter.notes ? note : ``}
                 </div>
             </div>
