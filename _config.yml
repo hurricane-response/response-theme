@@ -40,7 +40,7 @@ mapbox_access_token: pk.eyJ1IjoibWlrbGItYzR0YiIsImEiOiJjam5kOGg3c2kwMDB3M3dwYXQy
 shelter_map_center: -95.7129, 37.0902
 shelter_zoom: 3.6
 
-pod_map_center: -95.7129, 7.0902
+pod_map_center: -95.7129, 37.0902
 pod_zoom: 3.6
 
 shelter_endpoint: https://api.hurricane-response.org/api/v1/shelters/geo.json
