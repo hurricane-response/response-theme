@@ -271,7 +271,7 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
         if (shelter.notes === 'null') { shelter.notes = null }
 
         let petsExtraNotes = shelter.pets_notes;
-        if (!!petsExtraNotes === 'null' || petsExtraNotes) {
+        if (!petsExtraNotes || petsExtraNotes === 'null') {
             petsExtraNotes = '';
         }
 
