@@ -12,7 +12,7 @@
 	>
 		<div class="wrapper">
 			{% include header.html %}
-			
+
 			<main class="content">
 			{% include txtbot.html %}
 			<div class="map-header">
@@ -22,7 +22,7 @@
 					<div id="map-container" class="shelter-map_container">
     					<div id="map">
     					</div>
-    
+
 					</div>
 					<div class="map-legend">
     					<h3>Legend</h3>
@@ -49,14 +49,14 @@
 						</div>
 						 Shelter
 						</p>
-						</div>	
+						</div>
 					</div>
 <script>
     // Load access token from config
     mapboxgl.accessToken = '{{site.mapbox_access_token}}';
 
     const MAP_LOAD_CENTER = [{{ site.pod_map_center }}];
-    const ZOOM = [{{ site.pod_zoom }}];
+    const INITIAL_ZOOM = [{{ site.pod_zoom }}];
 
     var map = new mapboxgl.Map({
         // container id specified in the HTML
@@ -65,8 +65,7 @@
         style: 'mapbox://styles/miklb-c4tb/cjnozdzs41qlx2rqvf7mwfztt',
         // initial position in [lon, lat] format
         center: MAP_LOAD_CENTER,
-        // initial zoom
-        zoom: ZOOM
+        zoom: INITIAL_ZOOM
     });
 map.on('load', function() {
     // Add a new source from our GeoJSON data and set the
@@ -110,6 +109,7 @@ map.on('load', function() {
             ]
         }
     });
+
     map.addLayer({
         id: "cluster-count",
         type: "symbol",
@@ -121,6 +121,26 @@ map.on('load', function() {
             "text-size": 14
         }
     });
+
+    // on mouseover, make it obvious that clusters are interactive
+    map.on('mouseenter', 'clusters', () => {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'clusters', () => {
+        map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'clusters', e => {
+        const cluster = map.queryRenderedFeatures(e.point, { layers: ['clusters'] })[0];
+        const clusterId = cluster.properties.cluster_id;
+        const center = cluster.geometry.coordinates;
+        map.getSource('pods').getClusterExpansionZoom(clusterId, (err, zoom) => {
+            err || map.easeTo({ center, zoom });
+        });
+    });
+
     map.loadImage("{{site.baseurl}}/assets/images/shelter-icon.png", (error, img) => {
         map.addImage("shelter", img);
         map.addLayer({
@@ -145,7 +165,7 @@ map.on('load', function() {
         map.on('mouseenter', 'unclustered-point', function () {
             map.getCanvas().style.cursor = 'pointer';
         });
-        
+
         // Change it back to a pointer when it leaves.
         map.on('mouseleave', 'unclustered-point', function () {
             map.getCanvas().style.cursor = '';
